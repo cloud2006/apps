@@ -1,98 +1,482 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HabitsFlow – Privacy Policy & Terms of Use</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>— Indie Apps</title>
+        <meta
+            name="description"
+            content="Indie Apps."
+        />
+        <style>
+            :root {
+                --bg: #0b0c10;
+                --panel: #121419;
+                --text: #e8ecf1;
+                --muted: #a7b0bc;
+                --brand: #64b5f6;
+                --accent: #8ec07c;
+                --border: #20242c;
+                --shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
+                --radius: 16px;
+                --maxw: 1100px;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                height: 100%;
+            }
+            body {
+                margin: 0;
+                font:
+                    16px/1.6 system-ui,
+                    -apple-system,
+                    Segoe UI,
+                    Roboto,
+                    Ubuntu,
+                    Cantarell,
+                    Noto Sans,
+                    Arial,
+                    "Apple Color Emoji",
+                    "Segoe UI Emoji";
+                color: var(--text);
+                background: radial-gradient(
+                    1200px 800px at 70% -10%,
+                    #1b2030 0%,
+                    var(--bg) 60%
+                );
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            a {
+                color: var(--brand);
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            header {
+                position: sticky;
+                top: 0;
+                z-index: 50;
+                backdrop-filter: saturate(180%) blur(10px);
+                background: rgba(11, 12, 16, 0.7);
+                border-bottom: 1px solid var(--border);
+            }
+            .nav {
+                max-width: var(--maxw);
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 14px 20px;
+            }
+            .brand {
+                font-weight: 700;
+                letter-spacing: 0.3px;
+            }
+            .menu {
+                display: flex;
+                gap: 18px;
+                align-items: center;
+            }
+            .menu a {
+                color: var(--text);
+                opacity: 0.9;
+            }
+            .menu a:hover {
+                opacity: 1;
+            }
+            .hamburger {
+                display: none;
+                border: 1px solid var(--border);
+                background: var(--panel);
+                padding: 8px 10px;
+                border-radius: 10px;
+            }
 
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 1.5rem;
-      text-align: center;
-    }
+            .container {
+                max-width: var(--maxw);
+                margin: 0 auto;
+                padding: 28px 20px;
+            }
+            .hero {
+                padding: 64px 0 24px;
+                display: grid;
+                gap: 12px;
+            }
+            .hero h1 {
+                margin: 0;
+                font-size: clamp(28px, 4.5vw, 48px);
+                line-height: 1.15;
+                letter-spacing: -0.5px;
+            }
+            .hero p {
+                margin: 8px 0 0;
+                color: var(--muted);
+                max-width: 70ch;
+            }
+            .cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                background: var(--brand);
+                color: #0b0c10;
+                font-weight: 700;
+                padding: 12px 16px;
+                border-radius: 12px;
+                margin-top: 14px;
+                box-shadow: var(--shadow);
+            }
+            .cta:hover {
+                text-decoration: none;
+                filter: brightness(1.05);
+            }
 
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+            .panel {
+                background: linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0.02),
+                    rgba(255, 255, 255, 0)
+                );
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+            }
+            .section {
+                margin-top: 36px;
+            }
+            .section h2 {
+                margin: 0 0 14px;
+                font-size: clamp(22px, 3vw, 30px);
+            }
+            .muted {
+                color: var(--muted);
+            }
 
-    h1, h2 {
-      color: #2c3e50;
-    }
+            /* Apps grid */
+            .apps {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 16px;
+            }
+            .app {
+                padding: 18px;
+                display: grid;
+                gap: 10px;
+            }
+            .app .badge {
+                font-size: 12px;
+                color: #0b0c10;
+                background: var(--accent);
+                display: inline-block;
+                padding: 2px 8px;
+                border-radius: 999px;
+                font-weight: 700;
+            }
+            .app h3 {
+                margin: 4px 0;
+                font-size: 18px;
+            }
+            .app p {
+                margin: 0;
+                color: var(--muted);
+            }
+            .actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 4px;
+            }
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 10px 12px;
+                border-radius: 10px;
+                border: 1px solid var(--border);
+                background: var(--panel);
+                color: var(--text);
+                font-weight: 600;
+            }
+            .btn:hover {
+                text-decoration: none;
+                border-color: #2b3340;
+            }
 
-    section {
-      margin-bottom: 2rem;
-    }
+            /* Privacy */
+            .privacy {
+                padding: 18px;
+            }
+            .privacy h3 {
+                margin: 14px 0 8px;
+                font-size: 18px;
+            }
+            .privacy ul {
+                margin: 8px 0 0 18px;
+            }
 
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      margin: 3rem 0 1rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>HabitsFlow</h1>
-    <p><a href="#privacy" style="color: white;">Privacy Policy</a> | <a href="#terms" style="color: white;">Terms of Use</a> | <a href="#support" style="color: white;">Support</a></p>
-  </header>
-  <main>
-    <section>
-      <h2 id="privacy">Privacy Policy</h2>
-      <p>This Privacy Policy describes how your personal information is handled in the HabitsFlow mobile application ("the App").</p>
-      <ul>
-        <li><strong>1. No Personal Data Collection:</strong> We do not collect, store, or transmit any personally identifiable information. All data you enter into the App is stored locally on your device and optionally synchronized via Apple’s iCloud service. This synchronization is subject to Apple’s privacy and security policies, and we do not have access to your iCloud data.</li>
-        <li><strong>2. Use of Analytics:</strong> We may use third-party analytics providers (such as Firebase Analytics) to help us understand aggregate trends and user behavior. This may include information such as device type, session duration, and feature usage. These data are collected anonymously and cannot be used to identify individual users.</li>
-        <li><strong>3. Security:</strong> We implement reasonable safeguards to protect data stored locally on your device. However, users are responsible for maintaining the security of their devices and iCloud accounts.</li>
-        <li><strong>4. Children's Privacy:</strong> The App is not intended for use by children under the age of 13. We do not knowingly collect any personal information from children.</li>
-        <li><strong>5. Consent:</strong> By using the App, you consent to this Privacy Policy. If you do not agree with it, please do not use the App.</li>
-        <li><strong>6. Changes to This Policy:</strong> We may update this Privacy Policy at any time. Any changes will be posted on this page with an updated effective date. Continued use of the App after any such changes constitutes your consent to the revised policy.</li>
-      </ul>
-    </section>
+            /* Support */
+            .support {
+                padding: 18px;
+                display: grid;
+                gap: 14px;
+            }
+            .faq {
+                display: grid;
+                gap: 10px;
+            }
+            details {
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 10px 12px;
+            }
+            summary {
+                cursor: pointer;
+                font-weight: 600;
+            }
+            form {
+                display: grid;
+                gap: 10px;
+            }
+            input,
+            textarea {
+                width: 100%;
+                padding: 12px;
+                border-radius: 10px;
+                border: 1px solid var(--border);
+                background: #0f1218;
+                color: var(--text);
+            }
+            textarea {
+                min-height: 120px;
+            }
+            .small {
+                font-size: 13px;
+            }
 
-    <section>
-      <h2 id="terms">Terms of Use</h2>
-      <p><strong>Effective Date:</strong> <span id="effective-date"></span></p>
-      <ul>
-        <li><strong>1. Acceptance of Terms:</strong> By downloading, accessing, or using the HabitsFlow application ("the App"), you agree to be bound by these Terms of Use. If you do not agree to these terms, do not use the App.</li>
-        <li><strong>2. License:</strong> We grant you a personal, non-transferable, non-exclusive license to use the App on your devices in accordance with these terms.</li>
-        <li><strong>3. User Responsibility:</strong> You are solely responsible for how you use the App, including any data you input and store. You must not use the App in any unlawful or harmful manner.</li>
-        <li><strong>4. Data Synchronization:</strong> The App may offer the ability to synchronize your data via Apple’s iCloud service. You are responsible for enabling and managing this functionality through your Apple ID. We do not control or have access to any iCloud data.</li>
-        <li><strong>5. Analytics:</strong> Anonymous usage statistics may be collected through third-party analytics services to improve the functionality and user experience of the App. No personally identifiable data is collected.</li>
-        <li><strong>6. Intellectual Property:</strong> All intellectual property rights in and to the App, including but not limited to design, source code, content, and branding, are and shall remain the exclusive property of the developer.</li>
-        <li><strong>7. Disclaimer of Warranties:</strong> The App is provided "as is" without warranties of any kind. We make no guarantees regarding the reliability, availability, or performance of the App.</li>
-        <li><strong>8. Limitation of Liability:</strong> Under no circumstances shall the developer be held liable for any direct, indirect, incidental, or consequential damages arising from the use or inability to use the App.</li>
-        <li><strong>9. Termination:</strong> We reserve the right to suspend or terminate your access to the App at our sole discretion, without prior notice or liability, for any reason.</li>
-        <li><strong>10. Changes to Terms:</strong> We reserve the right to revise these Terms of Use at any time. Continued use of the App after such changes constitutes your acceptance of the revised terms.</li>
-      </ul>
-    </section>
-    <section>
-      <h2 id="support">Support</h2>
-      <p>If you have questions, feedback, or need assistance, please feel free to contact us:</p>
-      <ul>
-        <li>Email: <a href="mailto:dev.pavlo.antoniuk@gmail.com">dev.pavlo.antoniuk@gmail.com</a></li>
-        <li>Frequently Asked Questions (FAQ): <a href="#faq">Coming Soon</a></li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    &copy; <span id="year"></span> HabitsFlow. All rights reserved.
-  </footer>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("effective-date").textContent = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
-  </script>
-</body>
+            footer {
+                border-top: 1px solid var(--border);
+                margin-top: 36px;
+            }
+            .foot {
+                max-width: var(--maxw);
+                margin: 0 auto;
+                padding: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                align-items: center;
+                justify-content: space-between;
+                color: var(--muted);
+            }
+
+            /* Responsive */
+            @media (max-width: 920px) {
+                .apps {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+            @media (max-width: 640px) {
+                .menu {
+                    display: none;
+                    position: absolute;
+                    right: 20px;
+                    top: 62px;
+                    background: var(--panel);
+                    border: 1px solid var(--border);
+                    padding: 10px;
+                    border-radius: 12px;
+                    flex-direction: column;
+                    gap: 10px;
+                    box-shadow: var(--shadow);
+                }
+                .menu.open {
+                    display: flex;
+                }
+                .hamburger {
+                    display: inline-flex;
+                }
+                .apps {
+                    grid-template-columns: 1fr;
+                }
+                .cta {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav class="nav" aria-label="Primary">
+                <div class="brand">Indie Apps</div>
+                <button
+                    class="hamburger"
+                    aria-controls="menu"
+                    aria-expanded="false"
+                    id="navToggle"
+                >
+                    ☰ Menu
+                </button>
+                <div id="menu" class="menu" role="menu">
+                    <a href="#apps" role="menuitem">Apps</a>
+                    <a href="privacypolicy/privacy.html" role="menuitem">Privacy</a>
+                    <a href="#support" role="menuitem">Support</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="container hero">
+                <h1>Indie apps crafted with care.</h1>
+                <p>
+                    I’m Paul, an indie developer focused on simple, fast and
+                    privacy‑respecting apps. Everything here is built with love,
+                    shipped with intention, and improved with your feedback.
+                </p>
+                <a class="cta" href="#apps" aria-label="Jump to apps"
+                    >Explore the apps →</a
+                >
+            </section>
+
+            <!-- Apps -->
+            <section id="apps" class="container section">
+                <h2>Apps</h2>
+                <p class="muted">
+                    A small collection of focused tools. No clutter, no trackers
+                    you don’t agree to.
+                </p>
+
+                <div class="apps">
+                    <article class="app panel">
+                        <span class="badge">iOS • iPad</span>
+                        <h3>Habit tracker: HabitsFlow</h3>
+                        <p>
+                            Build better routines with gentle reminders,
+                            streaks, and clean stats. iCloud sync, no accounts.
+                        </p>
+                        <div class="actions">
+                            <a
+                                class="btn"
+                                href="https://apps.apple.com/us/app/habit-tracker-habitsflow/id6744604703"
+                                aria-label="View on the App Store (HabitsFlow)"
+                                >App Store</a
+                            >
+                            <a
+                                class="btn"
+                                href="privacypolicy/privacy.html"
+                                aria-label="Privacy for HabitsFlow"
+                                >Privacy</a
+                            >
+                            <a
+                                class="btn"
+                                href="#support"
+                                aria-label="Support for HabitsFlow"
+                                >Support</a
+                            >
+                        </div>
+                    </article>
+
+                    <article class="app panel">
+                        <span class="badge">iOS</span>
+                        <h3>WaterTracker</h3>
+                        <p>
+                            Stay hydrated with smart goals based on your
+                            activity and climate.
+                        </p>
+                        <div class="actions">
+                            <a
+                                class="btn"
+                                href="#"
+                                aria-label="View on the App Store (WaterTracker)"
+                                >App Store</a
+                            >
+                            <a
+                                class="btn"
+                                href="privacypolicy/privacy.html"
+                                aria-label="Privacy for WaterTracker"
+                                >Privacy</a
+                            >
+                            <a
+                                class="btn"
+                                href="#support"
+                                aria-label="Support for WaterTracker"
+                                >Support</a
+                            >
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+
+            <!-- Support -->
+            <section id="support" class="container section">
+                <h2>Support</h2>
+                <div class="panel support">
+                    <p class="muted">
+                        Need help or want to suggest a feature? Check the quick
+                        answers below or send me a message.
+                    </p>
+
+                    <div class="faq">
+                        <details>
+                            <summary>How do I restore purchases?</summary>
+                            <p>
+                                Open the app, go to
+                                <em>Settings → Purchases</em>, then tap
+                                <strong>Restore</strong>. Make sure you’re
+                                signed in with the same Apple ID you used to buy
+                                the app.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>How do I request a new feature?</summary>
+                           <p>
+                                Send a short description of your idea using the
+                                email <a href="mailto:dev.pavlo.antoniuk@gmail.com">dev.pavlo.antoniuk@gmail.com</a>. I read every message.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>How do I report a bug?</summary>
+                            <p>
+                                Please include your device model, iOS version,
+                                and steps to reproduce. A quick screen recording
+                                helps a lot.
+                                email <a href="mailto:dev.pavlo.antoniuk@gmail.com">dev.pavlo.antoniuk@gmail.com</a>.
+                            </p>
+                        </details>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="foot">
+                <div>© <span id="year"></span> Pavlo Antoniuk. All rights reserved.</div>
+                <div>
+                    <a href="#apps">Apps</a> · <a href="privacypolicy/privacy.html">Privacy</a> ·
+                    <a href="#support">Support</a>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Mobile nav toggle
+            const toggle = document.getElementById("navToggle");
+            const menu = document.getElementById("menu");
+            toggle?.addEventListener("click", () => {
+                const open = menu.classList.toggle("open");
+                toggle.setAttribute("aria-expanded", open ? "true" : "false");
+            });
+            // Year auto-update
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
+        </script>
+    </body>
 </html>
