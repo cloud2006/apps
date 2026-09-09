@@ -3,480 +3,379 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>— Indie Apps</title>
+        <title>Indie Apps</title>
         <meta
             name="description"
-            content="Indie Apps."
+            content="Indie apps crafted with focus, speed, and privacy. HabitsFlow, WaterTotter, and Freeriders."
         />
-        <style>
-            :root {
-                --bg: #0b0c10;
-                --panel: #121419;
-                --text: #e8ecf1;
-                --muted: #a7b0bc;
-                --brand: #64b5f6;
-                --accent: #8ec07c;
-                --border: #20242c;
-                --shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
-                --radius: 16px;
-                --maxw: 1100px;
-            }
-            * {
-                box-sizing: border-box;
-            }
-            html,
-            body {
-                height: 100%;
-            }
-            body {
-                margin: 0;
-                font:
-                    16px/1.6 system-ui,
-                    -apple-system,
-                    Segoe UI,
-                    Roboto,
-                    Ubuntu,
-                    Cantarell,
-                    Noto Sans,
-                    Arial,
-                    "Apple Color Emoji",
-                    "Segoe UI Emoji";
-                color: var(--text);
-                background: radial-gradient(
-                    1200px 800px at 70% -10%,
-                    #1b2030 0%,
-                    var(--bg) 60%
-                );
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
-            a {
-                color: var(--brand);
-                text-decoration: none;
-            }
-            a:hover {
-                text-decoration: underline;
-            }
-            header {
-                position: sticky;
-                top: 0;
-                z-index: 50;
-                backdrop-filter: saturate(180%) blur(10px);
-                background: rgba(11, 12, 16, 0.7);
-                border-bottom: 1px solid var(--border);
-            }
-            .nav {
-                max-width: var(--maxw);
-                margin: 0 auto;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: 14px 20px;
-            }
-            .brand {
-                font-weight: 700;
-                letter-spacing: 0.3px;
-            }
-            .menu {
-                display: flex;
-                gap: 18px;
-                align-items: center;
-            }
-            .menu a {
-                color: var(--text);
-                opacity: 0.9;
-            }
-            .menu a:hover {
-                opacity: 1;
-            }
-            .hamburger {
-                display: none;
-                border: 1px solid var(--border);
-                background: var(--panel);
-                padding: 8px 10px;
-                border-radius: 10px;
-            }
-
-            .container {
-                max-width: var(--maxw);
-                margin: 0 auto;
-                padding: 28px 20px;
-            }
-            .hero {
-                padding: 64px 0 24px;
-                display: grid;
-                gap: 12px;
-            }
-            .hero h1 {
-                margin: 0;
-                font-size: clamp(28px, 4.5vw, 48px);
-                line-height: 1.15;
-                letter-spacing: -0.5px;
-            }
-            .hero p {
-                margin: 8px 0 0;
-                color: var(--muted);
-                max-width: 70ch;
-            }
-            .cta {
-                display: inline-flex;
-                align-items: center;
-                gap: 10px;
-                background: var(--brand);
-                color: #0b0c10;
-                font-weight: 700;
-                padding: 12px 16px;
-                border-radius: 12px;
-                margin-top: 14px;
-                box-shadow: var(--shadow);
-            }
-            .cta:hover {
-                text-decoration: none;
-                filter: brightness(1.05);
-            }
-
-            .panel {
-                background: linear-gradient(
-                    180deg,
-                    rgba(255, 255, 255, 0.02),
-                    rgba(255, 255, 255, 0)
-                );
-                border: 1px solid var(--border);
-                border-radius: var(--radius);
-                box-shadow: var(--shadow);
-            }
-            .section {
-                margin-top: 36px;
-            }
-            .section h2 {
-                margin: 0 0 14px;
-                font-size: clamp(22px, 3vw, 30px);
-            }
-            .muted {
-                color: var(--muted);
-            }
-
-            /* Apps grid */
-            .apps {
-                display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 16px;
-            }
-            .app {
-                padding: 18px;
-                display: grid;
-                gap: 10px;
-            }
-            .app .badge {
-                font-size: 12px;
-                color: #0b0c10;
-                background: var(--accent);
-                display: inline-block;
-                padding: 2px 8px;
-                border-radius: 999px;
-                font-weight: 700;
-            }
-            .app h3 {
-                margin: 4px 0;
-                font-size: 18px;
-            }
-            .app p {
-                margin: 0;
-                color: var(--muted);
-            }
-            .actions {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-                margin-top: 4px;
-            }
-            .btn {
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                padding: 10px 12px;
-                border-radius: 10px;
-                border: 1px solid var(--border);
-                background: var(--panel);
-                color: var(--text);
-                font-weight: 600;
-            }
-            .btn:hover {
-                text-decoration: none;
-                border-color: #2b3340;
-            }
-
-            /* Privacy */
-            .privacy {
-                padding: 18px;
-            }
-            .privacy h3 {
-                margin: 14px 0 8px;
-                font-size: 18px;
-            }
-            .privacy ul {
-                margin: 8px 0 0 18px;
-            }
-
-            /* Support */
-            .support {
-                padding: 18px;
-                display: grid;
-                gap: 14px;
-            }
-            .faq {
-                display: grid;
-                gap: 10px;
-            }
-            details {
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 12px;
-                padding: 10px 12px;
-            }
-            summary {
-                cursor: pointer;
-                font-weight: 600;
-            }
-            form {
-                display: grid;
-                gap: 10px;
-            }
-            input,
-            textarea {
-                width: 100%;
-                padding: 12px;
-                border-radius: 10px;
-                border: 1px solid var(--border);
-                background: #0f1218;
-                color: var(--text);
-            }
-            textarea {
-                min-height: 120px;
-            }
-            .small {
-                font-size: 13px;
-            }
-
-            footer {
-                border-top: 1px solid var(--border);
-                margin-top: 36px;
-            }
-            .foot {
-                max-width: var(--maxw);
-                margin: 0 auto;
-                padding: 20px;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-                align-items: center;
-                justify-content: space-between;
-                color: var(--muted);
-            }
-
-            /* Responsive */
-            @media (max-width: 920px) {
-                .apps {
-                    grid-template-columns: repeat(2, minmax(0, 1fr));
-                }
-            }
-            @media (max-width: 640px) {
-                .menu {
-                    display: none;
-                    position: absolute;
-                    right: 20px;
-                    top: 62px;
-                    background: var(--panel);
-                    border: 1px solid var(--border);
-                    padding: 10px;
-                    border-radius: 12px;
-                    flex-direction: column;
-                    gap: 10px;
-                    box-shadow: var(--shadow);
-                }
-                .menu.open {
-                    display: flex;
-                }
-                .hamburger {
-                    display: inline-flex;
-                }
-                .apps {
-                    grid-template-columns: 1fr;
-                }
-                .cta {
-                    width: 100%;
-                    justify-content: center;
-                }
-            }
-        </style>
+        <!-- Google Fonts: Plus Jakarta Sans -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+        />
+        <!-- External Stylesheet -->
+        <link rel="stylesheet" href="css/main.css" />
     </head>
     <body>
+        <!-- Sticky Navigation Header -->
         <header>
-            <nav class="nav" aria-label="Primary">
-                <div class="brand">Indie Apps</div>
+            <div class="nav">
+                <a href="#" class="brand">
+                    <div class="brand-avatar">✨</div>
+                    <span>Indie Apps</span>
+                </a>
+
                 <button
                     class="hamburger"
-                    aria-controls="menu"
-                    aria-expanded="false"
                     id="navToggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
                 >
-                    ☰ Menu
+                    ☰
                 </button>
-                <div id="menu" class="menu" role="menu">
-                    <a href="#apps" role="menuitem">Apps</a>
-                    <a href="privacypolicy/privacy.html" role="menuitem">Privacy</a>
-                    <a href="#support" role="menuitem">Support</a>
-                </div>
-            </nav>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#apps" class="nav-link">Apps</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#support" class="nav-link">Support</a></li>
+                    <li><a href="privacypolicy/privacy.html" class="nav-link">Privacy & Terms</a></li>
+                    <li><a href="mailto:dev.pavlo.antoniuk@gmail.com" class="nav-cta">Get in Touch</a></li>
+                </ul>
+            </div>
         </header>
 
         <main>
-            <section class="container hero">
-                <h1>Indie apps crafted with care.</h1>
-                <p>
-                    I’m Paul, an indie developer focused on simple, fast and
-                    privacy‑respecting apps. Everything here is built with love,
-                    shipped with intention, and improved with your feedback.
-                </p>
-                <a class="cta" href="#apps" aria-label="Jump to apps"
-                    >Explore the apps →</a
-                >
-            </section>
+            <!-- Hero Section -->
+            <section class="container hero" id="about">
+                <div class="pill-badge">
+                    <span class="pill-dot"></span>
+                    <span>Independent iOS & Apple Platforms Developer</span>
+                </div>
 
-            <!-- Apps -->
-            <section id="apps" class="container section">
-                <h2>Apps</h2>
-                <p class="muted">
-                    A small collection of focused tools. No clutter, no trackers
-                    you don’t agree to.
+                <h1>Apps crafted with care,<br />focus, and privacy.</h1>
+
+                <p class="hero-lead">
+                    Thoughtfully engineered native Apple apps designed to solve everyday problems with speed, elegant interfaces, and zero clutter.
                 </p>
 
-                <div class="apps">
-                    <article class="app panel">
-                        <span class="badge">iOS • iPad</span>
-                        <h3>Habit tracker: HabitsFlow</h3>
-                        <p>
-                            Build better routines with gentle reminders,
-                            streaks, and clean stats. iCloud sync, no accounts.
-                        </p>
-                        <div class="actions">
-                            <a
-                                class="btn"
-                                href="https://apps.apple.com/us/app/habit-tracker-habitsflow/id6744604703"
-                                aria-label="View on the App Store (HabitsFlow)"
-                                >App Store</a
-                            >
-                            <a
-                                class="btn"
-                                href="privacypolicy/privacy.html"
-                                aria-label="Privacy for HabitsFlow"
-                                >Privacy</a
-                            >
-                            <a
-                                class="btn"
-                                href="#support"
-                                aria-label="Support for HabitsFlow"
-                                >Support</a
-                            >
-                        </div>
-                    </article>
-
-                    <article class="app panel">
-                        <span class="badge">iOS</span>
-                        <h3>WaterTotter</h3>
-                        <p>
-                            Stay hydrated with smart goals based on your
-                            activity and climate.
-                        </p>
-                        <div class="actions">
-                            <a
-                                class="btn"
-                                href="https://apps.apple.com/us/app/watertotter-water-tracker/id6751142079"
-                                aria-label="View on the App Store (WaterTotter)"
-                                >App Store</a
-                            >
-                            <a
-                                class="btn"
-                                href="privacypolicy/privacy.html"
-                                aria-label="Privacy for WaterTotter"
-                                >Privacy</a
-                            >
-                            <a
-                                class="btn"
-                                href="#support"
-                                aria-label="Support for WaterTotter"
-                                >Support</a
-                            >
-                        </div>
-                    </article>
-
+                <div class="hero-actions">
+                    <a href="#apps" class="btn-primary">
+                        <span>Explore Apps</span>
+                        <span>↓</span>
+                    </a>
+                    <a href="#support" class="btn-secondary">
+                        <span>Contact & Support</span>
+                    </a>
                 </div>
             </section>
 
-
-            <!-- Support -->
-            <section id="support" class="container section">
-                <h2>Support</h2>
-                <div class="panel support">
-                    <p class="muted">
-                        Need help or want to suggest a feature? Check the quick
-                        answers below or send me a message.
+            <!-- Apps Showcase Section -->
+            <section class="container section" id="apps">
+                <div class="section-header">
+                    <h2 class="section-title">Applications</h2>
+                    <p class="section-desc">
+                        A focused collection of thoughtfully engineered tools available on the App Store and in active development.
                     </p>
+                </div>
 
-                    <div class="faq">
-                        <details>
-                            <summary>How do I restore purchases?</summary>
-                            <p>
-                                Open the app, go to
-                                <em>Settings → Purchases</em>, then tap
-                                <strong>Restore</strong>. Make sure you’re
-                                signed in with the same Apple ID you used to buy
-                                the app.
-                            </p>
+                <div class="apps-grid">
+                    <!-- App 1: HabitsFlow -->
+                    <article class="app-card app-card-featured" id="habitsflow">
+                        <div class="app-header">
+                            <div class="app-info-left">
+                                <div class="app-avatar app-avatar-habits">🌱</div>
+                                <div class="app-title-group">
+                                    <h3>Habit tracker: HabitsFlow</h3>
+                                    <div class="app-badges">
+                                        <span class="badge badge-platform">iOS • iPadOS</span>
+                                        <span class="badge badge-live">● Available on App Store</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-actions">
+                                <a
+                                    class="btn-appstore"
+                                    href="https://apps.apple.com/us/app/habit-tracker-habitsflow/id6744604703"
+                                    target="_blank"
+                                    rel="noopener"
+                                    aria-label="Download HabitsFlow on the Apple App Store"
+                                >
+                                    <svg viewBox="0 0 170 170" aria-hidden="true">
+                                        <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-5.78-8.8-10.3-18.7-13.56-29.7-3.26-11-4.89-21.6-4.89-31.8 0-15.01 3.86-27.46 11.59-37.34 7.73-9.88 17.33-14.93 28.81-15.15 4.8 0 10.12 1.25 15.96 3.75 5.84 2.5 9.87 3.81 12.1 3.93 1.85-.22 5.94-1.57 12.27-4.05 6.33-2.48 11.54-3.63 15.63-3.45 13.59.87 24.3 5.84 32.13 14.9-11.85 7.18-17.67 17.07-17.47 29.68.2 9.79 3.96 17.84 11.28 24.16 7.32 6.31 16.09 9.88 26.31 10.7-2.17 6.74-4.67 13.3-7.5 19.67zM119.22 31.84c0-7.39 2.66-14.36 7.99-20.91 5.33-6.55 11.86-10.42 19.6-11.61.22 1.3.33 2.5.33 3.6 0 7.39-2.77 14.49-8.31 21.3-5.54 6.81-12.1 10.74-19.68 11.78-.11-1.39-.17-2.77-.17-4.16z" />
+                                    </svg>
+                                    <span>App Store</span>
+                                </a>
+                                <a class="btn-outline" href="privacypolicy/privacy.html#privacy">Privacy</a>
+                                <a class="btn-outline" href="#support">Support</a>
+                            </div>
+                        </div>
+
+                        <div class="app-body">
+                            <div class="app-desc-content">
+                                <p class="app-description">
+                                    Build enduring habits and transform your daily routines. HabitsFlow combines gentle customizable reminders, motivating streak trackers, and clean progress visualizations — completely synced with iCloud without account friction.
+                                </p>
+                                <div class="app-highlights">
+                                    <span class="highlight-tag">✨ Clean Streak Milestones</span>
+                                    <span class="highlight-tag">☁️ Private iCloud Sync</span>
+                                    <span class="highlight-tag">📊 Visual Progress Analytics</span>
+                                    <span class="highlight-tag">🔔 Smart Gentle Reminders</span>
+                                </div>
+                            </div>
+
+                            <!-- Screenshots Showcase (1 at a time on mobile, gallery on desktop) -->
+                            <div class="gallery-wrapper">
+                                <div class="gallery-header">
+                                    <span class="gallery-label">📱 App Screenshots</span>
+                                    <div class="gallery-nav">
+                                        <button class="gallery-arrow" onclick="scrollGallery('habitsflow-gallery', -1)" aria-label="Previous screenshot">‹</button>
+                                        <span class="gallery-counter" id="habitsflow-gallery-counter">1 / 4</span>
+                                        <button class="gallery-arrow" onclick="scrollGallery('habitsflow-gallery', 1)" aria-label="Next screenshot">›</button>
+                                    </div>
+                                </div>
+                                <div class="screenshots-slider-wrapper">
+                                    <div class="screenshots-scroll" id="habitsflow-gallery">
+                                        <div class="screen-item" onclick="openLightbox('habitsflow/screenshots/page1.png', 'HabitsFlow - Overview')">
+                                            <img src="habitsflow/screenshots/page1.png" alt="HabitsFlow habit tracking screen" loading="lazy" />
+                                            <div class="screen-overlay">🔍 Zoom</div>
+                                        </div>
+                                        <div class="screen-item" onclick="openLightbox('habitsflow/screenshots/page2.png', 'HabitsFlow - Daily Routine')">
+                                            <img src="habitsflow/screenshots/page2.png" alt="HabitsFlow daily routine checklist" loading="lazy" />
+                                            <div class="screen-overlay">🔍 Zoom</div>
+                                        </div>
+                                        <div class="screen-item" onclick="openLightbox('habitsflow/screenshots/page3.png', 'HabitsFlow - Analytics & Streaks')">
+                                            <img src="habitsflow/screenshots/page3.png" alt="HabitsFlow streak tracking and analytics" loading="lazy" />
+                                            <div class="screen-overlay">🔍 Zoom</div>
+                                        </div>
+                                        <div class="screen-item" onclick="openLightbox('habitsflow/screenshots/page4.png', 'HabitsFlow - Customization & Settings')">
+                                            <img src="habitsflow/screenshots/page4.png" alt="HabitsFlow custom reminders and preferences" loading="lazy" />
+                                            <div class="screen-overlay">🔍 Zoom</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Mobile Carousel Indicator Dots -->
+                                <div class="gallery-dots" id="habitsflow-gallery-dots">
+                                    <button class="dot active" onclick="goToSlide('habitsflow-gallery', 0)" aria-label="Slide 1"></button>
+                                    <button class="dot" onclick="goToSlide('habitsflow-gallery', 1)" aria-label="Slide 2"></button>
+                                    <button class="dot" onclick="goToSlide('habitsflow-gallery', 2)" aria-label="Slide 3"></button>
+                                    <button class="dot" onclick="goToSlide('habitsflow-gallery', 3)" aria-label="Slide 4"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- App 2: WaterTotter -->
+                    <article class="app-card" id="watertotter">
+                        <div class="app-header">
+                            <div class="app-info-left">
+                                <div class="app-avatar app-avatar-water">💧</div>
+                                <div class="app-title-group">
+                                    <h3>WaterTotter: Water Tracker</h3>
+                                    <div class="app-badges">
+                                        <span class="badge badge-platform">iOS</span>
+                                        <span class="badge badge-live">● Available on App Store</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-actions">
+                                <a
+                                    class="btn-appstore"
+                                    href="https://apps.apple.com/us/app/watertotter-water-tracker/id6751142079"
+                                    target="_blank"
+                                    rel="noopener"
+                                    aria-label="Download WaterTotter on the Apple App Store"
+                                >
+                                    <svg viewBox="0 0 170 170" aria-hidden="true">
+                                        <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-5.78-8.8-10.3-18.7-13.56-29.7-3.26-11-4.89-21.6-4.89-31.8 0-15.01 3.86-27.46 11.59-37.34 7.73-9.88 17.33-14.93 28.81-15.15 4.8 0 10.12 1.25 15.96 3.75 5.84 2.5 9.87 3.81 12.1 3.93 1.85-.22 5.94-1.57 12.27-4.05 6.33-2.48 11.54-3.63 15.63-3.45 13.59.87 24.3 5.84 32.13 14.9-11.85 7.18-17.67 17.07-17.47 29.68.2 9.79 3.96 17.84 11.28 24.16 7.32 6.31 16.09 9.88 26.31 10.7-2.17 6.74-4.67 13.3-7.5 19.67zM119.22 31.84c0-7.39 2.66-14.36 7.99-20.91 5.33-6.55 11.86-10.42 19.6-11.61.22 1.3.33 2.5.33 3.6 0 7.39-2.77 14.49-8.31 21.3-5.54 6.81-12.1 10.74-19.68 11.78-.11-1.39-.17-2.77-.17-4.16z" />
+                                    </svg>
+                                    <span>App Store</span>
+                                </a>
+                                <a class="btn-outline" href="privacypolicy/privacy.html#privacy">Privacy</a>
+                                <a class="btn-outline" href="#support">Support</a>
+                            </div>
+                        </div>
+
+                        <div class="app-body">
+                            <div class="app-desc-content">
+                                <p class="app-description">
+                                    Never forget to drink water again. WaterTotter dynamically calculates and adapts your daily hydration targets based on your personal activity levels and environmental climate, keeping you energetic and healthy.
+                                </p>
+                                <div class="app-highlights">
+                                    <span class="highlight-tag">🌊 1-Tap Quick Logging</span>
+                                    <span class="highlight-tag">🌤️ Adaptive Weather & Climate Goals</span>
+                                    <span class="highlight-tag">📈 Hydration Trend Statistics</span>
+                                    <span class="highlight-tag">🔋 Lightweight & Fast</span>
+                                </div>
+                            </div>
+
+                            <!-- Screenshots Showcase (1 at a time on mobile, gallery on desktop) -->
+                            <div class="gallery-wrapper">
+                                <div class="gallery-header">
+                                    <span class="gallery-label">📱 App Screenshots</span>
+                                    <div class="gallery-nav">
+                                        <button class="gallery-arrow" onclick="scrollGallery('water-gallery', -1)" aria-label="Previous screenshot">‹</button>
+                                        <span class="gallery-counter" id="water-gallery-counter">1 / 4</span>
+                                        <button class="gallery-arrow" onclick="scrollGallery('water-gallery', 1)" aria-label="Next screenshot">›</button>
+                                    </div>
+                                </div>
+                                <div class="screenshots-slider-wrapper">
+                                    <div class="screenshots-scroll" id="water-gallery">
+                                        <div class="screen-item" onclick="openLightbox('watertracker/screenshots/page1.png', 'WaterTotter - Main Hydration Ring')">
+                                            <img src="watertracker/screenshots/page1.png" alt="WaterTotter hydration goal screen" loading="lazy" />
+                                            <div class="screen-overlay">🔍 Zoom</div>
+                                        </div>
+                                        <div class="screen-item" onclick="openLightbox('watertracker/screenshots/page2.png', 'WaterTotter - Drink Selection')">
+                                            <img src="watertracker/screenshots/page2.png" alt="WaterTotter beverage logging screen" loading="lazy" />
+                                            <div class="screen-overlay">🔍 Zoom</div>
+                                        </div>
+                                        <div class="screen-item" onclick="openLightbox('watertracker/screenshots/page3.png', 'WaterTotter - Daily History')">
+                                            <img src="watertracker/screenshots/page3.png" alt="WaterTotter daily log history" loading="lazy" />
+                                            <div class="screen-overlay">🔍 Zoom</div>
+                                        </div>
+                                        <div class="screen-item" onclick="openLightbox('watertracker/screenshots/page4.png', 'WaterTotter - Insights & Settings')">
+                                            <img src="watertracker/screenshots/page4.png" alt="WaterTotter hydration insights and target setup" loading="lazy" />
+                                            <div class="screen-overlay">🔍 Zoom</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Mobile Carousel Indicator Dots -->
+                                <div class="gallery-dots" id="water-gallery-dots">
+                                    <button class="dot active" onclick="goToSlide('water-gallery', 0)" aria-label="Slide 1"></button>
+                                    <button class="dot" onclick="goToSlide('water-gallery', 1)" aria-label="Slide 2"></button>
+                                    <button class="dot" onclick="goToSlide('water-gallery', 2)" aria-label="Slide 3"></button>
+                                    <button class="dot" onclick="goToSlide('water-gallery', 3)" aria-label="Slide 4"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- App 3: Freeriders -->
+                    <article class="app-card" id="freeriders">
+                        <div class="app-header">
+                            <div class="app-info-left">
+                                <div class="app-avatar app-avatar-freeriders">🏔️</div>
+                                <div class="app-title-group">
+                                    <h3>Freeriders</h3>
+                                    <div class="app-badges">
+                                        <span class="badge badge-platform">iOS</span>
+                                        <span class="badge badge-coming">★ Coming soon</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-actions">
+                                <a class="btn-outline" href="freeriders/privacy.html">Privacy Policy</a>
+                                <a class="btn-outline" href="freeriders/terms.html">Terms of Use</a>
+                            </div>
+                        </div>
+
+                        <div class="app-body">
+                            <div class="freeriders-coming-soon-box">
+                                <div class="cs-icon">🏔️</div>
+                                <div class="cs-text">Comming soon</div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Support & FAQ Section -->
+            <section class="container section" id="support">
+                <div class="section-header">
+                    <h2 class="section-title">Support & FAQ</h2>
+                    <p class="section-desc">
+                        Need assistance, have a question, or want to suggest an improvement? Here is everything you need.
+                    </p>
+                </div>
+
+                <div class="support-layout">
+                    <!-- FAQ Accordion -->
+                    <div class="faq-list">
+                        <details class="faq-item">
+                            <summary class="faq-question">How do I restore past purchases?</summary>
+                            <div class="faq-answer">
+                                <p>
+                                    Open the app settings, navigate to <strong>Purchases / Subscription</strong>, and tap <strong>Restore Purchases</strong>. Ensure you are signed in with the same Apple ID used for the initial purchase.
+                                </p>
+                            </div>
                         </details>
-                        <details>
-                            <summary>How do I request a new feature?</summary>
-                           <p>
-                                Send a short description of your idea using the
-                                email <a href="mailto:dev.pavlo.antoniuk@gmail.com">dev.pavlo.antoniuk@gmail.com</a>. I read every message.
-                            </p>
+
+                        <details class="faq-item">
+                            <summary class="faq-question">How is my personal data handled?</summary>
+                            <div class="faq-answer">
+                                <p>
+                                    All personal logs, habits, and route data are stored directly on your device and synchronized via your personal Apple iCloud container. We do not operate user-tracking servers or sell personal data. You can read our full <a href="privacypolicy/privacy.html" style="color: var(--accent-blue);">Privacy Policy</a> for details.
+                                </p>
+                            </div>
                         </details>
-                        <details>
-                            <summary>How do I report a bug?</summary>
-                            <p>
-                                Please include your device model, iOS version,
-                                and steps to reproduce. A quick screen recording
-                                helps a lot.
-                                email <a href="mailto:dev.pavlo.antoniuk@gmail.com">dev.pavlo.antoniuk@gmail.com</a>.
-                            </p>
+
+                        <details class="faq-item">
+                            <summary class="faq-question">How do I request a feature or suggest ideas?</summary>
+                            <div class="faq-answer">
+                                <p>
+                                    I welcome all feedback and feature ideas from users! Drop an email to <a href="mailto:dev.pavlo.antoniuk@gmail.com" style="color: var(--accent-blue);">dev.pavlo.antoniuk@gmail.com</a>. I read and respond to every message.
+                                </p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-question">How do I report a bug?</summary>
+                            <div class="faq-answer">
+                                <p>
+                                    Please send an email including your device model, iOS version, and a brief description of the steps that lead to the issue. A screenshot or screen recording is always extremely helpful.
+                                </p>
+                            </div>
                         </details>
                     </div>
 
+                    <!-- Direct Contact Card -->
+                    <div class="contact-card">
+                        <div>
+                            <h3>Direct Contact</h3>
+                            <p>
+                                Got a question, collaboration idea, or need help with any of the apps? Feel free to write directly.
+                            </p>
+                            <div class="email-box">
+                                <span class="email-address" id="emailText">dev.pavlo.antoniuk@gmail.com</span>
+                                <button class="btn-copy" id="copyBtn" onclick="copyEmail()">Copy</button>
+                            </div>
+                        </div>
+
+                        <a href="mailto:dev.pavlo.antoniuk@gmail.com" class="btn-primary" style="justify-content: center; width: 100%;">
+                            <span>Send an Email</span>
+                            <span>✉️</span>
+                        </a>
+                    </div>
                 </div>
             </section>
         </main>
 
+        <!-- Footer -->
         <footer>
-            <div class="foot">
-                <div>© <span id="year"></span> Pavlo Antoniuk. All rights reserved.</div>
+            <div class="container footer-content">
                 <div>
-                    <a href="#apps">Apps</a> · <a href="privacypolicy/privacy.html">Privacy</a> ·
-                    <a href="#support">Support</a>
+                    © <span id="year"></span> <strong>Indie Apps</strong>. All rights reserved.
                 </div>
+                <ul class="footer-links">
+                    <li><a href="#apps">Apps</a></li>
+                    <li><a href="privacypolicy/privacy.html">General Privacy & Terms</a></li>
+                    <li><a href="freeriders/privacy.html">Freeriders Privacy</a></li>
+                    <li><a href="freeriders/terms.html">Freeriders Terms</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
             </div>
         </footer>
 
-        <script>
-            // Mobile nav toggle
-            const toggle = document.getElementById("navToggle");
-            const menu = document.getElementById("menu");
-            toggle?.addEventListener("click", () => {
-                const open = menu.classList.toggle("open");
-                toggle.setAttribute("aria-expanded", open ? "true" : "false");
-            });
-            // Year auto-update
-            document.getElementById("year").textContent =
-                new Date().getFullYear();
-        </script>
+        <!-- Lightbox Zoom Modal -->
+        <div class="lightbox-modal" id="lightbox" onclick="closeLightbox(event)">
+            <div class="lightbox-content">
+                <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image preview">✕</button>
+                <img id="lightboxImg" src="" alt="Zoomed screenshot" />
+            </div>
+        </div>
+
+        <!-- External JavaScript -->
+        <script src="js/main.js"></script>
     </body>
 </html>
