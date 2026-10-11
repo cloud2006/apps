@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en" data-theme-key="habitsflow-theme">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <title>HabitsFlow — Habit Tracker & Focus Timer</title>
+        <meta
+            name="description"
+            content="HabitsFlow is a calm habit tracker for iPhone, iPad and Mac: create habits in seconds, check them off in a tap, focus with a Pomodoro timer and follow your progress. No data collected."
+        />
+        <meta property="og:title" content="HabitsFlow — Habit Tracker & Focus Timer" />
+        <meta property="og:description" content="Build habits that flow. Habits, focus timer, statistics and widgets for iPhone, iPad and Mac." />
+        <meta property="og:image" content="screenshots/web/today-light.jpg" />
+        <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0b0b10" media="(prefers-color-scheme: dark)" />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236e5cf6'/%3E%3Cpath d='M19 33l9 9 17-19' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+        />
+        <script>
+            (function () {
+                var root = document.documentElement;
+                root.classList.add("js");
+                try {
+                    var saved = localStorage.getItem(root.dataset.themeKey);
+                    if (saved === "light" || saved === "dark") root.dataset.theme = saved;
+                } catch (e) {}
+            })();
+        </script>
+        <link rel="stylesheet" href="../css/app-page.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- Icon sprite -->
+        <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+            <symbol id="i-check" viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+            <symbol id="i-x" viewBox="0 0 24 24"><path d="M8 8l8 8M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" /></symbol>
+            <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" /></symbol>
+            <symbol id="i-clip" viewBox="0 0 24 24"><path fill="currentColor" d="M9 2.5h6a1 1 0 0 1 1 1V4h1.5A2.5 2.5 0 0 1 20 6.5v13a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 19.5v-13A2.5 2.5 0 0 1 6.5 4H8v-.5a1 1 0 0 1 1-1Zm0 1.5v1.5h6V4H9Zm-1 7h8v1.6H8V11Zm0 4h5.5v1.6H8V15Z" /></symbol>
+            <symbol id="i-run" viewBox="0 0 24 24"><circle cx="14.6" cy="4.4" r="2.3" fill="currentColor" /><path d="M9.6 21.2l2.6-5.6 2.9 2.4v3.6M6.6 12.2l2.9-3.7 4.2-.5 2.3 3.3 3 .9M12.2 15.6l1.4-6.8" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+            <symbol id="i-apple" viewBox="0 0 170 170"><path fill="currentColor" d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-5.78-8.8-10.3-18.7-13.56-29.7-3.26-11-4.89-21.6-4.89-31.8 0-15.01 3.86-27.46 11.59-37.34 7.73-9.88 17.33-14.93 28.81-15.15 4.8 0 10.12 1.25 15.96 3.75 5.84 2.5 9.87 3.81 12.1 3.93 1.85-.22 5.94-1.57 12.27-4.05 6.33-2.48 11.54-3.63 15.63-3.45 13.59.87 24.3 5.84 32.13 14.9-11.85 7.18-17.67 17.07-17.47 29.68.2 9.79 3.96 17.84 11.28 24.16 7.32 6.31 16.09 9.88 26.31 10.7-2.17 6.74-4.67 13.3-7.5 19.67zM119.22 31.84c0-7.39 2.66-14.36 7.99-20.91 5.33-6.55 11.86-10.42 19.6-11.61.22 1.3.33 2.5.33 3.6 0 7.39-2.77 14.49-8.31 21.3-5.54 6.81-12.1 10.74-19.68 11.78-.11-1.39-.17-2.77-.17-4.16z" /></symbol>
+            <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+            <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+            <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" /></symbol>
+            <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2" /><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4" /></g></symbol>
+            <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.2 8.2 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" /></symbol>
+            <symbol id="i-tab-habits" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M8 12.4l2.8 2.8 5.4-5.6" /></g></symbol>
+            <symbol id="i-tab-focus" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8" /><path d="M12 9v4l2.6 2.4M9.6 2.6h4.8" /></g></symbol>
+            <symbol id="i-tab-stats" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="3.5" y="10" width="4.4" height="10" rx="1.4" /><rect x="9.8" y="4" width="4.4" height="16" rx="1.4" /><rect x="16.1" y="7" width="4.4" height="13" rx="1.4" /></g></symbol>
+            <symbol id="i-tab-settings" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.1" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z" /></g></symbol>
+            <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2 6 6 2-6 2-2 6-2-6-6-2 6-2Zm7 12l.9 2.6 2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9Z" /></symbol>
+            <symbol id="i-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8.5a6 6 0 0 0-12 0c0 6.5-2.5 8.5-2.5 8.5h17S18 15 18 8.5" /><path d="M13.7 20.5a2 2 0 0 1-3.4 0" /></g></symbol>
+            <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 19h10.5a4.2 4.2 0 0 0 .6-8.35A6.2 6.2 0 0 0 6.4 9.2 4.9 4.9 0 0 0 7 19Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" /></symbol>
+            <symbol id="i-iphone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.8" /><path d="M10.5 5.3h3" /></g></symbol>
+            <symbol id="i-ipad" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3.5" y="2.5" width="17" height="19" rx="2.6" /><path d="M11 18.6h2" /></g></symbol>
+            <symbol id="i-mac" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4.5" width="16" height="11" rx="1.8" /><path d="M2 19.5h20" /></g></symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="M3.5 6.5l8.5 6.5 8.5-6.5" /></g></symbol>
+        </svg>
+
+        <!-- Top bar: brand · section tabs (iPad-style pill, a floating tab bar on phones) · theme -->
+        <header class="topbar">
+            <div class="wrap topbar-inner">
+                <a class="brand" href="./" aria-label="HabitsFlow home">
+                    <span class="brand-mark"><svg><use href="#i-check" /></svg></span>
+                    <span>HabitsFlow</span>
+                </a>
+
+                <nav class="tabs" aria-label="Sections">
+                    <a href="#top" class="tab is-active" data-section-link="top"><svg><use href="#i-tab-habits" /></svg><span>Overview</span></a>
+                    <a href="#features" class="tab" data-section-link="features"><svg><use href="#i-tab-focus" /></svg><span>Features</span></a>
+                    <a href="#screens" class="tab" data-section-link="screens"><svg><use href="#i-tab-stats" /></svg><span>Screens</span></a>
+                    <a href="#support" class="tab" data-section-link="support"><svg><use href="#i-tab-settings" /></svg><span>Support</span></a>
+                </nav>
+
+                <div class="topbar-actions">
+                    <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+                        <svg class="when-light"><use href="#i-moon" /></svg>
+                        <svg class="when-dark"><use href="#i-sun" /></svg>
+                    </button>
+                    <a class="pill-link" href="../">All apps</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- ============ HERO ============ -->
+            <section class="hero" id="top" data-section>
+                <div class="wrap hero-grid">
+                    <div class="hero-copy">
+                        <p class="eyebrow" data-today-label>Your daily routine</p>
+                        <h1>Build habits<br />that <span class="flow-word">flow</span>.</h1>
+                        <p class="lead">
+                            HabitsFlow keeps routines light: create a habit in seconds, check it off with a tap, stay on task with a built-in Pomodoro timer and watch your progress add up — on iPhone, iPad and Mac.
+                        </p>
+                        <div class="hero-cta">
+                            <a
+                                class="btn-store"
+                                href="https://apps.apple.com/us/app/habit-tracker-habitsflow/id6744604703"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <svg aria-hidden="true"><use href="#i-apple" /></svg>
+                                <span><small>Download on the</small>App Store</span>
+                            </a>
+                            <a class="btn-soft" href="#features">See what's inside</a>
+                        </div>
+                        <ul class="hero-meta">
+                            <li><span class="dot" style="--c: var(--h-green)"></span>Free · Premium optional</li>
+                            <li><span class="dot" style="--c: var(--h-orange)"></span>iPhone, iPad &amp; Mac</li>
+                            <li><span class="dot" style="--c: var(--h-magenta)"></span>10 languages</li>
+                            <li><span class="dot" style="--c: var(--h-violet)"></span>No data collected</li>
+                        </ul>
+                    </div>
+
+                    <!-- Interactive replica of the Today screen -->
+                    <div class="hero-device">
+                        <div class="device">
+                            <div class="device-screen hf-screen" id="todayScreen">
+                                <div class="hf-status" aria-hidden="true">
+                                    <span>9:41</span>
+                                    <span class="hf-status-icons">
+                                        <svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="5" y="5.5" width="3" height="6.5" rx="1" /><rect x="10" y="3" width="3" height="9" rx="1" /><rect x="15" y="0" width="3" height="12" rx="1" /></svg>
+                                        <svg viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".45" /><rect x="2.5" y="2.5" width="15" height="7" rx="2" /><rect x="23" y="4" width="2" height="4" rx="1" opacity=".45" /></svg>
+                                    </span>
+                                </div>
+
+                                <div class="hf-head">
+                                    <div>
+                                        <p class="hf-date" data-today-label>Sunday, October 11</p>
+                                        <p class="hf-greeting" data-greeting>Good evening</p>
+                                    </div>
+                                    <span class="hf-fab" aria-hidden="true"><svg><use href="#i-plus" /></svg></span>
+                                </div>
+
+                                <div class="hf-seg" aria-hidden="true">
+                                    <span class="is-on">Today</span><span>Week</span><span>Calendar</span>
+                                </div>
+
+                                <div class="hf-card hf-progress">
+                                    <div class="hf-progress-top">
+                                        <div class="hf-ring">
+                                            <svg viewBox="0 0 44 44" aria-hidden="true">
+                                                <circle class="hf-ring-track" cx="22" cy="22" r="18" />
+                                                <circle class="hf-ring-fill" cx="22" cy="22" r="18" id="todayRing" />
+                                            </svg>
+                                            <svg class="hf-ring-check"><use href="#i-check" /></svg>
+                                        </div>
+                                        <div>
+                                            <p class="hf-label">Daily progress</p>
+                                            <p class="hf-count"><strong id="todayDone">1</strong><span>/4</span></p>
+                                            <p class="hf-sub" id="todayLeft" aria-live="polite">3 habits to go</p>
+                                        </div>
+                                    </div>
+                                    <div class="hf-weekrow" aria-hidden="true">
+                                        <span><i>Mo</i><b style="--p: 1"></b></span>
+                                        <span><i>Tu</i><b style="--p: 0.75"></b></span>
+                                        <span><i>We</i><b style="--p: 1"></b></span>
+                                        <span><i>Th</i><b style="--p: 0.5"></b></span>
+                                        <span><i>Fr</i><b style="--p: 1"></b></span>
+                                        <span><i>Sa</i><b style="--p: 0.75"></b></span>
+                                        <span class="is-today"><i>Su</i><b id="todayMini" style="--p: 0.25"></b></span>
+                                    </div>
+                                </div>
+
+                                <ul class="hf-habits">
+                                    <li>
+                                        <button class="hf-habit" type="button" aria-pressed="true" style="--c: var(--h-green)">
+                                            <span class="hf-habit-icon"><svg><use href="#i-clip" /></svg></span>
+                                            <span class="hf-habit-text"><span>English lesson</span><span class="hf-streak"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span>
+                                            <span class="hf-check"><svg><use href="#i-check" /></svg></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="hf-habit" type="button" aria-pressed="false" style="--c: var(--h-orange)">
+                                            <span class="hf-habit-icon"><svg><use href="#i-clip" /></svg></span>
+                                            <span class="hf-habit-text"><span>Push ups</span><span class="hf-streak"><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i></i><i></i><small>13:15</small></span></span>
+                                            <span class="hf-check"><svg><use href="#i-check" /></svg></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="hf-habit" type="button" aria-pressed="false" style="--c: var(--h-magenta)">
+                                            <span class="hf-habit-icon"><svg><use href="#i-run" /></svg></span>
+                                            <span class="hf-habit-text"><span>Morning workout</span><span class="hf-streak"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+                                            <span class="hf-check"><svg><use href="#i-check" /></svg></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="hf-habit" type="button" aria-pressed="false" style="--c: var(--h-violet)">
+                                            <span class="hf-habit-icon"><svg><use href="#i-clip" /></svg></span>
+                                            <span class="hf-habit-text"><span>Read a book</span><span class="hf-streak"><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+                                            <span class="hf-check"><svg><use href="#i-check" /></svg></span>
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="hf-tabbar" aria-hidden="true">
+                                    <span class="is-on"><svg><use href="#i-tab-habits" /></svg>Habits</span>
+                                    <span><svg><use href="#i-tab-focus" /></svg>Focus</span>
+                                    <span><svg><use href="#i-tab-stats" /></svg>Statistics</span>
+                                    <span><svg><use href="#i-tab-settings" /></svg>Settings</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="hint"><svg><use href="#i-sparkle" /></svg>Tap the habits to check them off</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ FEATURES ============ -->
+            <section class="section" id="features" data-section>
+                <div class="wrap">
+                    <header class="section-head" data-reveal>
+                        <p class="eyebrow">Features</p>
+                        <h2>Everything a habit needs.<br />Nothing it doesn't.</h2>
+                    </header>
+
+                    <div class="bento">
+                        <!-- Week view (interactive) -->
+                        <article class="tile tile-week" data-reveal>
+                            <div class="tile-copy">
+                                <p class="label">Week by week</p>
+                                <h3>Your whole week at a glance</h3>
+                                <p>Every habit, every day. Tap a day to mark it done — tap again to skip it.</p>
+                            </div>
+                            <div class="week-grid" id="weekGrid">
+                                <div class="week-days" aria-hidden="true"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span class="is-today">Su</span></div>
+                                <div class="week-row" style="--c: var(--h-green)" data-habit="English lesson">
+                                    <p><span class="mini-icon"><svg><use href="#i-clip" /></svg></span>English lesson<b class="week-count">4/7</b></p>
+                                    <div class="week-cells"><button data-state="done"></button><button data-state="skip"></button><button data-state="done"></button><button data-state="done"></button><button data-state="done"></button><button data-state="empty"></button><button data-state="empty"></button></div>
+                                </div>
+                                <div class="week-row" style="--c: var(--h-orange)" data-habit="Push ups">
+                                    <p><span class="mini-icon"><svg><use href="#i-clip" /></svg></span>Push ups<b class="week-count">3/7</b></p>
+                                    <div class="week-cells"><button data-state="done"></button><button data-state="done"></button><button data-state="skip"></button><button data-state="done"></button><button data-state="empty"></button><button data-state="empty"></button><button data-state="empty"></button></div>
+                                </div>
+                                <div class="week-row" style="--c: var(--h-magenta)" data-habit="Morning workout">
+                                    <p><span class="mini-icon"><svg><use href="#i-run" /></svg></span>Morning workout<b class="week-count">4/7</b></p>
+                                    <div class="week-cells"><button data-state="done"></button><button data-state="skip"></button><button data-state="done"></button><button data-state="done"></button><button data-state="done"></button><button data-state="empty"></button><button data-state="empty"></button></div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Focus timer (interactive) -->
+                        <article class="tile tile-focus" data-reveal style="--reveal-delay: 0.08s">
+                            <div class="tile-copy">
+                                <p class="label">Focus mode</p>
+                                <h3>A Pomodoro timer built in</h3>
+                                <p>Pick a habit or a task, start a session and let focus time flow into your stats.</p>
+                            </div>
+                            <div class="focus-demo">
+                                <div class="focus-ring">
+                                    <svg viewBox="0 0 120 120" aria-hidden="true">
+                                        <circle class="focus-track" cx="60" cy="60" r="52" />
+                                        <circle class="focus-fill" cx="60" cy="60" r="52" id="focusRing" />
+                                    </svg>
+                                    <div class="focus-time">
+                                        <span class="focus-caption">Focusing</span>
+                                        <strong id="focusTime">25:00</strong>
+                                    </div>
+                                </div>
+                                <button class="focus-btn" type="button" id="focusBtn">Start focus</button>
+                            </div>
+                        </article>
+
+                        <!-- Statistics -->
+                        <article class="tile tile-stats" data-reveal>
+                            <p class="label">Statistics</p>
+                            <h3>Progress you can see</h3>
+                            <div class="stats-demo" aria-hidden="true">
+                                <div class="stats-top"><strong>79%</strong><span>completion this week</span></div>
+                                <div class="bars">
+                                    <span style="--h: 0.6"><i>M</i></span>
+                                    <span style="--h: 0.85"><i>T</i></span>
+                                    <span style="--h: 0.45"><i>W</i></span>
+                                    <span style="--h: 1"><i>T</i></span>
+                                    <span style="--h: 0.7"><i>F</i></span>
+                                    <span style="--h: 0.9"><i>S</i></span>
+                                    <span style="--h: 0.55"><i>S</i></span>
+                                </div>
+                            </div>
+                            <p>Week, month and year views with bar and pie charts, best streaks and perfect days.</p>
+                        </article>
+
+                        <!-- Widgets -->
+                        <article class="tile tile-widgets" data-reveal style="--reveal-delay: 0.06s">
+                            <p class="label">Widgets</p>
+                            <h3>Check off from the Home Screen</h3>
+                            <div class="widget-demo" aria-hidden="true">
+                                <div class="widget-head"><span class="mini-check"><svg><use href="#i-check" /></svg></span>Today<b>2/3</b></div>
+                                <div class="widget-items">
+                                    <span style="--c: var(--h-green)" class="done">Drink water</span>
+                                    <span style="--c: var(--h-orange)" class="done">Reading</span>
+                                    <span style="--c: var(--h-red)">Workout</span>
+                                </div>
+                            </div>
+                            <p>See today's progress and tick habits without opening the app.</p>
+                        </article>
+
+                        <!-- Themes (controls this page's theme) -->
+                        <article class="tile tile-themes" data-reveal style="--reveal-delay: 0.12s">
+                            <p class="label">Appearance</p>
+                            <h3>Light, dark or auto</h3>
+                            <div class="theme-seg" role="group" aria-label="Page theme">
+                                <button type="button" data-theme-choice="auto">Auto</button>
+                                <button type="button" data-theme-choice="light">Light</button>
+                                <button type="button" data-theme-choice="dark">Dark</button>
+                            </div>
+                            <div class="swatches" aria-hidden="true">
+                                <i style="--s: #f4f1ea"></i><i style="--s: #f1ecf9"></i><i style="--s: #fbe9e7"></i><i style="--s: #e9f3ea"></i><i style="--s: #e6eefb"></i><i style="--s: #fff4d9"></i><i style="--s: #ece9ff"></i><i style="--s: linear-gradient(135deg, #6e5cf6, #c35cdf)"></i>
+                            </div>
+                            <p>Pick a theme, a background color or a wallpaper. Try the switch — it changes this page too.</p>
+                        </article>
+
+                        <!-- Schedule (interactive) -->
+                        <article class="tile tile-schedule" data-reveal>
+                            <div class="tile-copy">
+                                <p class="label">Schedule &amp; reminders</p>
+                                <h3>Your days, your rhythm</h3>
+                                <p>Choose the exact days for each habit and get a gentle nudge when it's time.</p>
+                            </div>
+                            <div class="schedule-demo" id="schedule">
+                                <div class="schedule-head"><span>Choose days</span><b id="scheduleCount">4 days a week</b></div>
+                                <div class="day-chips">
+                                    <button type="button" aria-pressed="true">Mon</button>
+                                    <button type="button" aria-pressed="false">Tue</button>
+                                    <button type="button" aria-pressed="true">Wed</button>
+                                    <button type="button" aria-pressed="false">Thu</button>
+                                    <button type="button" aria-pressed="true">Fri</button>
+                                    <button type="button" aria-pressed="false">Sat</button>
+                                    <button type="button" aria-pressed="true">Sun</button>
+                                </div>
+                                <div class="quick-chips">
+                                    <button type="button" data-days="0123456">Every day</button>
+                                    <button type="button" data-days="01234">Weekdays</button>
+                                    <button type="button" data-days="56">Weekends</button>
+                                </div>
+                                <div class="reminder"><svg><use href="#i-bell" /></svg><span>Reminder</span><b>13:15</b></div>
+                            </div>
+                        </article>
+
+                        <!-- iCloud sync -->
+                        <article class="tile tile-sync" data-reveal style="--reveal-delay: 0.08s">
+                            <div class="tile-copy">
+                                <p class="label">Private iCloud sync</p>
+                                <h3>Everywhere you are. Nowhere else.</h3>
+                                <p>Habits sync through your own iCloud — no account, no servers, no tracking. The App Store privacy label reads: <em>Data Not Collected</em>.</p>
+                            </div>
+                            <div class="sync-demo" aria-hidden="true">
+                                <span class="sync-device"><svg><use href="#i-iphone" /></svg>iPhone</span>
+                                <span class="sync-line"></span>
+                                <span class="sync-cloud"><svg><use href="#i-cloud" /></svg></span>
+                                <span class="sync-line"></span>
+                                <span class="sync-device"><svg><use href="#i-ipad" /></svg>iPad</span>
+                                <span class="sync-line"></span>
+                                <span class="sync-device"><svg><use href="#i-mac" /></svg>Mac</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ SCREENS ============ -->
+            <section class="section section-screens" id="screens" data-section>
+                <div class="wrap section-head-row" data-reveal>
+                    <header class="section-head">
+                        <p class="eyebrow">Screens</p>
+                        <h2>Calm in light.<br />Cozy in dark.</h2>
+                    </header>
+                    <div class="shots-nav">
+                        <button type="button" data-scroll-target="hfShots" data-dir="-1" aria-label="Previous screenshots"><svg><use href="#i-chev-l" /></svg></button>
+                        <button type="button" data-scroll-target="hfShots" data-dir="1" aria-label="Next screenshots"><svg><use href="#i-chev-r" /></svg></button>
+                    </div>
+                </div>
+
+                <div class="shots" id="hfShots" data-reveal>
+                    <figure class="shot">
+                        <button class="shot-btn" type="button" data-lightbox="iphone" data-caption="Today — light theme">
+                            <span class="device"><span class="device-screen"><img src="screenshots/web/today-light.jpg" alt="HabitsFlow Today screen in light theme with daily progress ring" loading="lazy" width="646" height="1400" /></span></span>
+                        </button>
+                        <figcaption><b>Today</b> Daily progress and your habits for the day</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <button class="shot-btn" type="button" data-lightbox="iphone" data-caption="Today — dark theme">
+                            <span class="device"><span class="device-screen"><img src="screenshots/web/today-dark.jpg" alt="HabitsFlow Today screen in dark theme" loading="lazy" width="646" height="1400" /></span></span>
+                        </button>
+                        <figcaption><b>Dark theme</b> Easy on the eyes after sunset</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <button class="shot-btn" type="button" data-lightbox="iphone" data-caption="Week view">
+                            <span class="device"><span class="device-screen"><img src="screenshots/web/week.jpg" alt="HabitsFlow week view with done and skipped days per habit" loading="lazy" width="646" height="1400" /></span></span>
+                        </button>
+                        <figcaption><b>Week</b> Done, skipped and upcoming days</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <button class="shot-btn" type="button" data-lightbox="iphone" data-caption="Calendar">
+                            <span class="device"><span class="device-screen"><img src="screenshots/web/calendar.jpg" alt="HabitsFlow calendar with completed days highlighted" loading="lazy" width="646" height="1400" /></span></span>
+                        </button>
+                        <figcaption><b>Calendar</b> The full history of every habit</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <button class="shot-btn" type="button" data-lightbox="iphone" data-caption="Focus">
+                            <span class="device"><span class="device-screen"><img src="screenshots/web/focus.jpg" alt="HabitsFlow Focus tab with today's focus minutes and tasks" loading="lazy" width="646" height="1400" /></span></span>
+                        </button>
+                        <figcaption><b>Focus</b> Habits and tasks ready for a session</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <button class="shot-btn" type="button" data-lightbox="iphone" data-caption="Pomodoro timer">
+                            <span class="device"><span class="device-screen"><img src="screenshots/web/focus-timer.jpg" alt="HabitsFlow Pomodoro focus timer counting down" loading="lazy" width="646" height="1400" /></span></span>
+                        </button>
+                        <figcaption><b>Pomodoro</b> Stay with one thing at a time</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <button class="shot-btn" type="button" data-lightbox="iphone" data-caption="Statistics">
+                            <span class="device"><span class="device-screen"><img src="screenshots/web/statistics.jpg" alt="HabitsFlow statistics with completion bars per habit" loading="lazy" width="646" height="1400" /></span></span>
+                        </button>
+                        <figcaption><b>Statistics</b> Completion for every habit</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <button class="shot-btn" type="button" data-lightbox="iphone" data-caption="Home Screen widgets">
+                            <span class="device"><span class="device-screen"><img src="screenshots/web/widgets.jpg" alt="HabitsFlow Today and This week widgets on the Home Screen" loading="lazy" width="646" height="1400" /></span></span>
+                        </button>
+                        <figcaption><b>Widgets</b> Today and This week on your Home Screen</figcaption>
+                    </figure>
+                </div>
+
+                <div class="wrap ipad-block" data-reveal>
+                    <div class="ipad-copy">
+                        <p class="label"><svg><use href="#i-ipad" /></svg>iPad &amp; Mac</p>
+                        <h3>Room to breathe on a bigger screen</h3>
+                        <p>A layout made for iPad that also runs on Macs with Apple silicon — with the same habits, synced.</p>
+                    </div>
+                    <div class="ipad-shots">
+                        <button class="ipad-shot" type="button" data-lightbox="ipad" data-caption="iPad — Today">
+                            <img src="screenshots/web/ipad-today.jpg" alt="HabitsFlow on iPad showing the Today tab" loading="lazy" width="973" height="1400" />
+                        </button>
+                        <button class="ipad-shot" type="button" data-lightbox="ipad" data-caption="iPad — Statistics">
+                            <img src="screenshots/web/ipad-statistics.jpg" alt="HabitsFlow on iPad showing statistics" loading="lazy" width="973" height="1400" />
+                        </button>
+                        <button class="ipad-shot" type="button" data-lightbox="ipad" data-caption="iPad — Themes">
+                            <img src="screenshots/web/ipad-themes.jpg" alt="HabitsFlow on iPad showing theme and background settings" loading="lazy" width="973" height="1400" />
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ WHAT'S NEW ============ -->
+            <section class="section" id="whats-new">
+                <div class="wrap narrow">
+                    <header class="section-head" data-reveal>
+                        <p class="eyebrow">What's new</p>
+                        <h2>Small updates, often.</h2>
+                    </header>
+                    <ol class="changelog" data-reveal>
+                        <li style="--c: var(--h-violet)">
+                            <span class="ver">1.09</span>
+                            <div><b>Fresh design &amp; Pomodoro in Focus mode</b><span>October 2026</span></div>
+                        </li>
+                        <li style="--c: var(--h-green)">
+                            <span class="ver">1.08</span>
+                            <div><b>Focus timer</b><span>September 2026</span></div>
+                        </li>
+                        <li style="--c: var(--h-orange)">
+                            <span class="ver">1.07</span>
+                            <div><b>Home Screen widgets</b><span>August 2026</span></div>
+                        </li>
+                        <li style="--c: var(--h-magenta)">
+                            <span class="ver">1.06</span>
+                            <div><b>A full UI redesign</b><span>June 2026</span></div>
+                        </li>
+                        <li style="--c: var(--h-red)">
+                            <span class="ver">1.05</span>
+                            <div><b>Onboarding and a new icon for iOS 26</b><span>November 2025</span></div>
+                        </li>
+                        <li style="--c: var(--h-blue)">
+                            <span class="ver">1.04</span>
+                            <div><b>One-time lifetime purchase option</b><span>September 2025</span></div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- ============ SUPPORT ============ -->
+            <section class="section" id="support" data-section>
+                <div class="wrap">
+                    <header class="section-head" data-reveal>
+                        <p class="eyebrow">Support</p>
+                        <h2>Questions? Answers.</h2>
+                    </header>
+
+                    <div class="support-grid">
+                        <div class="faq" data-reveal>
+                            <details>
+                                <summary>Is HabitsFlow free?</summary>
+                                <p>Yes — you can start building habits for free. HabitsFlow Premium unlocks full access and is available as a monthly or yearly subscription, or as a one-time lifetime purchase. Subscriptions can be cancelled anytime in your App Store account settings.</p>
+                            </details>
+                            <details>
+                                <summary>How do I restore my purchase?</summary>
+                                <p>Open the Premium screen in the app and tap <strong>Restore</strong>. Make sure you're signed in with the same Apple ID you used for the original purchase.</p>
+                            </details>
+                            <details>
+                                <summary>Do my habits sync between devices?</summary>
+                                <p>Yes. HabitsFlow syncs through your private iCloud, so your habits follow you across iPhone, iPad and Mac signed in with the same Apple ID. There's no separate account to create.</p>
+                            </details>
+                            <details>
+                                <summary>What data do you collect?</summary>
+                                <p>None. Your habits live on your device and in your own iCloud. There are no tracking servers and no data is sold. Read the full <a href="../privacypolicy/privacy.html#privacy">Privacy Policy</a>.</p>
+                            </details>
+                            <details>
+                                <summary>Which languages are supported?</summary>
+                                <p>English, French, German, Korean, Polish, Portuguese, Russian, Simplified Chinese, Spanish and Ukrainian.</p>
+                            </details>
+                            <details>
+                                <summary>How do I report a bug or suggest a feature?</summary>
+                                <p>Send an email with your device model, iOS version and a short description of what happened. A screenshot or screen recording helps a lot. Every message gets read.</p>
+                            </details>
+                        </div>
+
+                        <aside class="contact" data-reveal style="--reveal-delay: 0.08s">
+                            <span class="contact-icon"><svg><use href="#i-mail" /></svg></span>
+                            <h3>Write to the developer</h3>
+                            <p>HabitsFlow is made by one indie developer. Feedback, ideas and bug reports are always welcome.</p>
+                            <a class="btn-primary" href="mailto:dev.pavlo.antoniuk@gmail.com?subject=HabitsFlow%20support">Email support</a>
+                            <p class="contact-mail">dev.pavlo.antoniuk@gmail.com</p>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="wrap footer-inner">
+                <a class="brand" href="./">
+                    <span class="brand-mark"><svg><use href="#i-check" /></svg></span>
+                    <span>HabitsFlow</span>
+                </a>
+                <nav class="footer-links" aria-label="Footer">
+                    <a href="https://apps.apple.com/us/app/habit-tracker-habitsflow/id6744604703" target="_blank" rel="noopener">App Store</a>
+                    <a href="../privacypolicy/privacy.html#privacy">Privacy Policy</a>
+                    <a href="../privacypolicy/privacy.html#terms">Terms of Use</a>
+                    <a href="../">All apps</a>
+                </nav>
+                <p class="copyright">© <span data-year>2026</span> Pavlo Antoniuk</p>
+            </div>
+        </footer>
+
+        <dialog class="lightbox" aria-label="Screenshot preview">
+            <button class="lightbox-btn lightbox-close" type="button" data-lightbox-close aria-label="Close"><svg><use href="#i-close" /></svg></button>
+            <button class="lightbox-btn lightbox-prev" type="button" data-lightbox-prev aria-label="Previous screenshot"><svg><use href="#i-chev-l" /></svg></button>
+            <button class="lightbox-btn lightbox-next" type="button" data-lightbox-next aria-label="Next screenshot"><svg><use href="#i-chev-r" /></svg></button>
+            <figure>
+                <img alt="" />
+                <figcaption></figcaption>
+            </figure>
+        </dialog>
+
+        <script src="../js/app-page.js" defer></script>
+        <script src="app.js" defer></script>
+    </body>
+</html>

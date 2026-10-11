@@ -81,233 +81,82 @@
                 </div>
 
                 <div class="apps-grid">
-                    <!-- App 1: HabitsFlow -->
-                    <article class="app-card app-card-featured" id="habitsflow">
-                        <div class="app-header">
-                            <div class="app-info-left">
-                                <div class="app-avatar app-avatar-habits">🌱</div>
-                                <div class="app-title-group">
-                                    <h3>Habit tracker: HabitsFlow</h3>
-                                    <div class="app-badges">
-                                        <span class="badge badge-platform">iOS • iPadOS</span>
-                                        <span class="badge badge-live">● Available on App Store</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="app-actions">
-                                <a
-                                    class="btn-appstore"
-                                    href="https://apps.apple.com/us/app/habit-tracker-habitsflow/id6744604703"
-                                    target="_blank"
-                                    rel="noopener"
-                                    aria-label="Download HabitsFlow on the Apple App Store"
-                                >
-                                    <svg viewBox="0 0 170 170" aria-hidden="true">
-                                        <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-5.78-8.8-10.3-18.7-13.56-29.7-3.26-11-4.89-21.6-4.89-31.8 0-15.01 3.86-27.46 11.59-37.34 7.73-9.88 17.33-14.93 28.81-15.15 4.8 0 10.12 1.25 15.96 3.75 5.84 2.5 9.87 3.81 12.1 3.93 1.85-.22 5.94-1.57 12.27-4.05 6.33-2.48 11.54-3.63 15.63-3.45 13.59.87 24.3 5.84 32.13 14.9-11.85 7.18-17.67 17.07-17.47 29.68.2 9.79 3.96 17.84 11.28 24.16 7.32 6.31 16.09 9.88 26.31 10.7-2.17 6.74-4.67 13.3-7.5 19.67zM119.22 31.84c0-7.39 2.66-14.36 7.99-20.91 5.33-6.55 11.86-10.42 19.6-11.61.22 1.3.33 2.5.33 3.6 0 7.39-2.77 14.49-8.31 21.3-5.54 6.81-12.1 10.74-19.68 11.78-.11-1.39-.17-2.77-.17-4.16z" />
-                                    </svg>
-                                    <span>App Store</span>
-                                </a>
-                                <a class="btn-outline" href="privacypolicy/privacy.html#privacy">Privacy</a>
-                                <a class="btn-outline" href="#support">Support</a>
-                            </div>
+                    <!-- Each tile opens the app's own mini-site and previews its colors -->
+                    <a class="app-tile tile-habits" href="habitsflow/">
+                        <div class="tile-top">
+                            <span class="tile-icon tile-icon-habits" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                            </span>
+                            <span class="badge badge-live">● On the App Store</span>
                         </div>
-
-                        <div class="app-body">
-                            <div class="app-desc-content">
-                                <p class="app-description">
-                                    Build enduring habits and transform your daily routines. HabitsFlow combines gentle customizable reminders, motivating streak trackers, and clean progress visualizations — completely synced with iCloud without account friction.
-                                </p>
-                                <div class="app-highlights">
-                                    <span class="highlight-tag">✨ Clean Streak Milestones</span>
-                                    <span class="highlight-tag">☁️ Private iCloud Sync</span>
-                                    <span class="highlight-tag">📊 Visual Progress Analytics</span>
-                                    <span class="highlight-tag">🔔 Smart Gentle Reminders</span>
-                                </div>
-                            </div>
-
-                            <!-- Screenshots Showcase (1 at a time on mobile, gallery on desktop) -->
-                            <div class="gallery-wrapper">
-                                <div class="gallery-header">
-                                    <span class="gallery-label">📱 App Screenshots</span>
-                                    <div class="gallery-nav">
-                                        <button class="gallery-arrow" onclick="scrollGallery('habitsflow-gallery', -1)" aria-label="Previous screenshot">‹</button>
-                                        <span class="gallery-counter" id="habitsflow-gallery-counter">1 / 4</span>
-                                        <button class="gallery-arrow" onclick="scrollGallery('habitsflow-gallery', 1)" aria-label="Next screenshot">›</button>
-                                    </div>
-                                </div>
-                                <div class="screenshots-slider-wrapper">
-                                    <div class="screenshots-scroll" id="habitsflow-gallery">
-                                        <div class="screen-item" onclick="openLightbox('habitsflow/screenshots/page1.png', 'HabitsFlow - Overview')">
-                                            <img src="habitsflow/screenshots/page1.png" alt="HabitsFlow habit tracking screen" loading="lazy" />
-                                            <div class="screen-overlay">🔍 Zoom</div>
-                                        </div>
-                                        <div class="screen-item" onclick="openLightbox('habitsflow/screenshots/page2.png', 'HabitsFlow - Daily Routine')">
-                                            <img src="habitsflow/screenshots/page2.png" alt="HabitsFlow daily routine checklist" loading="lazy" />
-                                            <div class="screen-overlay">🔍 Zoom</div>
-                                        </div>
-                                        <div class="screen-item" onclick="openLightbox('habitsflow/screenshots/page3.png', 'HabitsFlow - Analytics & Streaks')">
-                                            <img src="habitsflow/screenshots/page3.png" alt="HabitsFlow streak tracking and analytics" loading="lazy" />
-                                            <div class="screen-overlay">🔍 Zoom</div>
-                                        </div>
-                                        <div class="screen-item" onclick="openLightbox('habitsflow/screenshots/page4.png', 'HabitsFlow - Customization & Settings')">
-                                            <img src="habitsflow/screenshots/page4.png" alt="HabitsFlow custom reminders and preferences" loading="lazy" />
-                                            <div class="screen-overlay">🔍 Zoom</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Mobile Carousel Indicator Dots -->
-                                <div class="gallery-dots" id="habitsflow-gallery-dots">
-                                    <button class="dot active" onclick="goToSlide('habitsflow-gallery', 0)" aria-label="Slide 1"></button>
-                                    <button class="dot" onclick="goToSlide('habitsflow-gallery', 1)" aria-label="Slide 2"></button>
-                                    <button class="dot" onclick="goToSlide('habitsflow-gallery', 2)" aria-label="Slide 3"></button>
-                                    <button class="dot" onclick="goToSlide('habitsflow-gallery', 3)" aria-label="Slide 4"></button>
-                                </div>
-                            </div>
+                        <h3>HabitsFlow</h3>
+                        <p class="tile-sub">Habit tracker &amp; focus timer</p>
+                        <p class="tile-desc">Build atomic habits, check them off in a tap and stay on task with a built-in Pomodoro timer — synced through your private iCloud.</p>
+                        <div class="tile-foot">
+                            <span class="tile-platforms">iPhone · iPad · Mac</span>
+                            <span class="tile-cta">Explore <span aria-hidden="true">→</span></span>
                         </div>
-                    </article>
+                        <span class="tile-deco tile-deco-habits" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                    </a>
 
-                    <!-- App 2: WaterTotter -->
-                    <article class="app-card" id="watertotter">
-                        <div class="app-header">
-                            <div class="app-info-left">
-                                <div class="app-avatar app-avatar-water">💧</div>
-                                <div class="app-title-group">
-                                    <h3>WaterTotter: Water Tracker</h3>
-                                    <div class="app-badges">
-                                        <span class="badge badge-platform">iOS</span>
-                                        <span class="badge badge-live">● Available on App Store</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="app-actions">
-                                <a
-                                    class="btn-appstore"
-                                    href="https://apps.apple.com/us/app/watertotter-water-tracker/id6751142079"
-                                    target="_blank"
-                                    rel="noopener"
-                                    aria-label="Download WaterTotter on the Apple App Store"
-                                >
-                                    <svg viewBox="0 0 170 170" aria-hidden="true">
-                                        <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-5.78-8.8-10.3-18.7-13.56-29.7-3.26-11-4.89-21.6-4.89-31.8 0-15.01 3.86-27.46 11.59-37.34 7.73-9.88 17.33-14.93 28.81-15.15 4.8 0 10.12 1.25 15.96 3.75 5.84 2.5 9.87 3.81 12.1 3.93 1.85-.22 5.94-1.57 12.27-4.05 6.33-2.48 11.54-3.63 15.63-3.45 13.59.87 24.3 5.84 32.13 14.9-11.85 7.18-17.67 17.07-17.47 29.68.2 9.79 3.96 17.84 11.28 24.16 7.32 6.31 16.09 9.88 26.31 10.7-2.17 6.74-4.67 13.3-7.5 19.67zM119.22 31.84c0-7.39 2.66-14.36 7.99-20.91 5.33-6.55 11.86-10.42 19.6-11.61.22 1.3.33 2.5.33 3.6 0 7.39-2.77 14.49-8.31 21.3-5.54 6.81-12.1 10.74-19.68 11.78-.11-1.39-.17-2.77-.17-4.16z" />
-                                    </svg>
-                                    <span>App Store</span>
-                                </a>
-                                <a class="btn-outline" href="privacypolicy/privacy.html#privacy">Privacy</a>
-                                <a class="btn-outline" href="#support">Support</a>
-                            </div>
+                    <a class="app-tile tile-water" href="watertotter/">
+                        <div class="tile-top">
+                            <span class="tile-icon tile-icon-water" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5c-3.2 4.7-6.5 8.6-6.5 12.2a6.5 6.5 0 0 0 13 0c0-3.6-3.3-7.5-6.5-12.2Z" /></svg>
+                            </span>
+                            <span class="badge badge-live">● On the App Store</span>
                         </div>
-
-                        <div class="app-body">
-                            <div class="app-desc-content">
-                                <p class="app-description">
-                                    Never forget to drink water again. WaterTotter dynamically calculates and adapts your daily hydration targets based on your personal activity levels and environmental climate, keeping you energetic and healthy.
-                                </p>
-                                <div class="app-highlights">
-                                    <span class="highlight-tag">🌊 1-Tap Quick Logging</span>
-                                    <span class="highlight-tag">🌤️ Adaptive Weather & Climate Goals</span>
-                                    <span class="highlight-tag">📈 Hydration Trend Statistics</span>
-                                    <span class="highlight-tag">🔋 Lightweight & Fast</span>
-                                </div>
-                            </div>
-
-                            <!-- Screenshots Showcase (1 at a time on mobile, gallery on desktop) -->
-                            <div class="gallery-wrapper">
-                                <div class="gallery-header">
-                                    <span class="gallery-label">📱 App Screenshots</span>
-                                    <div class="gallery-nav">
-                                        <button class="gallery-arrow" onclick="scrollGallery('water-gallery', -1)" aria-label="Previous screenshot">‹</button>
-                                        <span class="gallery-counter" id="water-gallery-counter">1 / 4</span>
-                                        <button class="gallery-arrow" onclick="scrollGallery('water-gallery', 1)" aria-label="Next screenshot">›</button>
-                                    </div>
-                                </div>
-                                <div class="screenshots-slider-wrapper">
-                                    <div class="screenshots-scroll" id="water-gallery">
-                                        <div class="screen-item" onclick="openLightbox('watertracker/screenshots/page1.png', 'WaterTotter - Main Hydration Ring')">
-                                            <img src="watertracker/screenshots/page1.png" alt="WaterTotter hydration goal screen" loading="lazy" />
-                                            <div class="screen-overlay">🔍 Zoom</div>
-                                        </div>
-                                        <div class="screen-item" onclick="openLightbox('watertracker/screenshots/page2.png', 'WaterTotter - Drink Selection')">
-                                            <img src="watertracker/screenshots/page2.png" alt="WaterTotter beverage logging screen" loading="lazy" />
-                                            <div class="screen-overlay">🔍 Zoom</div>
-                                        </div>
-                                        <div class="screen-item" onclick="openLightbox('watertracker/screenshots/page3.png', 'WaterTotter - Daily History')">
-                                            <img src="watertracker/screenshots/page3.png" alt="WaterTotter daily log history" loading="lazy" />
-                                            <div class="screen-overlay">🔍 Zoom</div>
-                                        </div>
-                                        <div class="screen-item" onclick="openLightbox('watertracker/screenshots/page4.png', 'WaterTotter - Insights & Settings')">
-                                            <img src="watertracker/screenshots/page4.png" alt="WaterTotter hydration insights and target setup" loading="lazy" />
-                                            <div class="screen-overlay">🔍 Zoom</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Mobile Carousel Indicator Dots -->
-                                <div class="gallery-dots" id="water-gallery-dots">
-                                    <button class="dot active" onclick="goToSlide('water-gallery', 0)" aria-label="Slide 1"></button>
-                                    <button class="dot" onclick="goToSlide('water-gallery', 1)" aria-label="Slide 2"></button>
-                                    <button class="dot" onclick="goToSlide('water-gallery', 2)" aria-label="Slide 3"></button>
-                                    <button class="dot" onclick="goToSlide('water-gallery', 3)" aria-label="Slide 4"></button>
-                                </div>
-                            </div>
+                        <h3>WaterTotter</h3>
+                        <p class="tile-sub">Water tracker &amp; reminders</p>
+                        <p class="tile-desc">A tiny, private water tracker with smart daily goals and gentle reminders. Free, no ads, no data collected.</p>
+                        <div class="tile-foot">
+                            <span class="tile-platforms">iPhone · Apple Watch · Vision Pro</span>
+                            <span class="tile-cta">Explore <span aria-hidden="true">→</span></span>
                         </div>
-                    </article>
+                        <svg class="tile-deco tile-deco-water" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true">
+                            <path d="M0 20 Q50 0 100 20 T200 20 T300 20 T400 20 V40 H0 Z" />
+                        </svg>
+                    </a>
 
-                    <!-- App 3: Freeriders -->
-                    <article class="app-card" id="freeriders">
-                        <div class="app-header">
-                            <div class="app-info-left">
-                                <div class="app-avatar app-avatar-freeriders">🏔️</div>
-                                <div class="app-title-group">
-                                    <h3>Freeriders</h3>
-                                    <div class="app-badges">
-                                        <span class="badge badge-platform">iOS</span>
-                                        <span class="badge badge-coming">★ Coming soon</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="app-actions">
-                                <a class="btn-outline" href="freeriders/privacy.html">Privacy Policy</a>
-                                <a class="btn-outline" href="freeriders/terms.html">Terms of Use</a>
-                            </div>
+                    <a class="app-tile tile-anime" href="animewallet/">
+                        <div class="tile-top">
+                            <span class="tile-icon tile-icon-anime" aria-hidden="true">
+                                <img src="animewallet/icon/icon-512.jpg" alt="" width="64" height="64" />
+                            </span>
+                            <span class="badge badge-coming">★ Coming soon</span>
                         </div>
+                        <h3>AnimeWallet</h3>
+                        <p class="tile-sub">Anime tracker for friends</p>
+                        <p class="tile-desc">A cozy home for everything you watch: track episodes, discover what's trending, keep collections and share them with friends.</p>
+                        <div class="tile-foot">
+                            <span class="tile-platforms">iPhone</span>
+                            <span class="tile-cta">Explore <span aria-hidden="true">→</span></span>
+                        </div>
+                        <svg class="tile-deco tile-deco-anime" viewBox="0 0 120 60" aria-hidden="true">
+                            <path fill="#f2b431" d="M30 8l4 9 9.8 1-7.3 6.6 2.1 9.6L30 29.3l-8.6 4.9 2.1-9.6-7.3-6.6 9.8-1Z" />
+                            <path fill="#6b35b8" d="M72 22l3 6.6 7.2.8-5.4 4.8 1.6 7.1L72 37.7l-6.4 3.6 1.6-7.1-5.4-4.8 7.2-.8Z" />
+                            <path fill="#5e9d4c" d="M102 6l2.2 4.9 5.3.6-4 3.6 1.2 5.2-4.7-2.7-4.7 2.7 1.2-5.2-4-3.6 5.3-.6Z" />
+                        </svg>
+                    </a>
 
-                        <div class="app-body">
-                            <div class="freeriders-coming-soon-box">
-                                <div class="cs-icon">🏔️</div>
-                                <div class="cs-text">Coming soon</div>
-                            </div>
+                    <article class="app-tile tile-freeriders">
+                        <div class="tile-top">
+                            <span class="tile-icon tile-icon-freeriders" aria-hidden="true">🏔️</span>
+                            <span class="badge badge-coming">★ Coming soon</span>
                         </div>
-                    </article>
-
-                    <!-- App 4: AnimeWallet -->
-                    <article class="app-card" id="animewallet">
-                        <div class="app-header">
-                            <div class="app-info-left">
-                                <div class="app-avatar app-avatar-animewallet">
-                                    <img src="animewallet/icon/appstore.png" alt="AnimeWallet icon" />
-                                </div>
-                                <div class="app-title-group">
-                                    <h3>AnimeWallet</h3>
-                                    <div class="app-badges">
-                                        <span class="badge badge-platform">iOS</span>
-                                        <span class="badge badge-coming">★ Coming soon</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="app-actions">
-                                <a class="btn-outline" href="animewallet/privacy.html">Privacy Policy</a>
-                                <a class="btn-outline" href="animewallet/terms.html">Terms of Use</a>
-                            </div>
+                        <h3>Freeriders</h3>
+                        <p class="tile-sub">In active development</p>
+                        <p class="tile-desc">Something for the mountains is on its way. Stay tuned.</p>
+                        <div class="tile-foot">
+                            <span class="tile-platforms">iPhone</span>
+                            <span class="tile-links">
+                                <a href="freeriders/privacy.html">Privacy</a>
+                                <a href="freeriders/terms.html">Terms</a>
+                            </span>
                         </div>
-
-                        <div class="app-body">
-                            <div class="animewallet-coming-soon-box">
-                                <div class="cs-icon">
-                                    <img src="animewallet/icon/appstore.png" alt="AnimeWallet icon" class="cs-icon-img" />
-                                </div>
-                                <div class="cs-text">Coming soon</div>
-                                <p class="cs-desc">Anime tracking & social app — track your favorite shows, share watchlists with friends, and leave reviews.</p>
-                            </div>
-                        </div>
+                        <svg class="tile-deco tile-deco-freeriders" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true">
+                            <path d="M0 70 L70 28 L110 46 L180 6 L250 50 L300 30 L400 64 V70 Z" />
+                        </svg>
                     </article>
                 </div>
             </section>
@@ -391,6 +240,9 @@
                 </div>
                 <ul class="footer-links">
                     <li><a href="#apps">Apps</a></li>
+                    <li><a href="habitsflow/">HabitsFlow</a></li>
+                    <li><a href="watertotter/">WaterTotter</a></li>
+                    <li><a href="animewallet/">AnimeWallet</a></li>
                     <li><a href="privacypolicy/privacy.html">General Privacy & Terms</a></li>
                     <li><a href="freeriders/privacy.html">Freeriders Privacy</a></li>
                     <li><a href="freeriders/terms.html">Freeriders Terms</a></li>
@@ -400,14 +252,6 @@
                 </ul>
             </div>
         </footer>
-
-        <!-- Lightbox Zoom Modal -->
-        <div class="lightbox-modal" id="lightbox" onclick="closeLightbox(event)">
-            <div class="lightbox-content">
-                <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image preview">✕</button>
-                <img id="lightboxImg" src="" alt="Zoomed screenshot" />
-            </div>
-        </div>
 
         <!-- External JavaScript -->
         <script src="js/main.js"></script>
