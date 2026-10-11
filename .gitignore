@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Raw device screenshots — pages use the resized copies in */screenshots/web/
+**/screenshots/IMG_*
+**/screenshots/ipad/
+
+# Local tooling
+.claude/
