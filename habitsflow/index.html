@@ -13,10 +13,8 @@
         <meta property="og:image" content="screenshots/web/today-light.jpg" />
         <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0b0b10" media="(prefers-color-scheme: dark)" />
-        <link
-            rel="icon"
-            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236e5cf6'/%3E%3Cpath d='M19 33l9 9 17-19' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
-        />
+        <link rel="icon" href="icon/icon-512.jpg" />
+        <link rel="apple-touch-icon" href="icon/icon-512.jpg" />
         <script>
             (function () {
                 var root = document.documentElement;
@@ -33,11 +31,6 @@
     <body>
         <!-- Icon sprite -->
         <svg width="0" height="0" style="position: absolute" aria-hidden="true">
-            <symbol id="i-check" viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" /></symbol>
-            <symbol id="i-x" viewBox="0 0 24 24"><path d="M8 8l8 8M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" /></symbol>
-            <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" /></symbol>
-            <symbol id="i-clip" viewBox="0 0 24 24"><path fill="currentColor" d="M9 2.5h6a1 1 0 0 1 1 1V4h1.5A2.5 2.5 0 0 1 20 6.5v13a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 19.5v-13A2.5 2.5 0 0 1 6.5 4H8v-.5a1 1 0 0 1 1-1Zm0 1.5v1.5h6V4H9Zm-1 7h8v1.6H8V11Zm0 4h5.5v1.6H8V15Z" /></symbol>
-            <symbol id="i-run" viewBox="0 0 24 24"><circle cx="14.6" cy="4.4" r="2.3" fill="currentColor" /><path d="M9.6 21.2l2.6-5.6 2.9 2.4v3.6M6.6 12.2l2.9-3.7 4.2-.5 2.3 3.3 3 .9M12.2 15.6l1.4-6.8" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" /></symbol>
             <symbol id="i-apple" viewBox="0 0 170 170"><path fill="currentColor" d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-5.78-8.8-10.3-18.7-13.56-29.7-3.26-11-4.89-21.6-4.89-31.8 0-15.01 3.86-27.46 11.59-37.34 7.73-9.88 17.33-14.93 28.81-15.15 4.8 0 10.12 1.25 15.96 3.75 5.84 2.5 9.87 3.81 12.1 3.93 1.85-.22 5.94-1.57 12.27-4.05 6.33-2.48 11.54-3.63 15.63-3.45 13.59.87 24.3 5.84 32.13 14.9-11.85 7.18-17.67 17.07-17.47 29.68.2 9.79 3.96 17.84 11.28 24.16 7.32 6.31 16.09 9.88 26.31 10.7-2.17 6.74-4.67 13.3-7.5 19.67zM119.22 31.84c0-7.39 2.66-14.36 7.99-20.91 5.33-6.55 11.86-10.42 19.6-11.61.22 1.3.33 2.5.33 3.6 0 7.39-2.77 14.49-8.31 21.3-5.54 6.81-12.1 10.74-19.68 11.78-.11-1.39-.17-2.77-.17-4.16z" /></symbol>
             <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></symbol>
             <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></symbol>
@@ -48,8 +41,6 @@
             <symbol id="i-tab-focus" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8" /><path d="M12 9v4l2.6 2.4M9.6 2.6h4.8" /></g></symbol>
             <symbol id="i-tab-stats" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="3.5" y="10" width="4.4" height="10" rx="1.4" /><rect x="9.8" y="4" width="4.4" height="16" rx="1.4" /><rect x="16.1" y="7" width="4.4" height="13" rx="1.4" /></g></symbol>
             <symbol id="i-tab-settings" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.1" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z" /></g></symbol>
-            <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2 6 6 2-6 2-2 6-2-6-6-2 6-2Zm7 12l.9 2.6 2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9Z" /></symbol>
-            <symbol id="i-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8.5a6 6 0 0 0-12 0c0 6.5-2.5 8.5-2.5 8.5h17S18 15 18 8.5" /><path d="M13.7 20.5a2 2 0 0 1-3.4 0" /></g></symbol>
             <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 19h10.5a4.2 4.2 0 0 0 .6-8.35A6.2 6.2 0 0 0 6.4 9.2 4.9 4.9 0 0 0 7 19Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" /></symbol>
             <symbol id="i-iphone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.8" /><path d="M10.5 5.3h3" /></g></symbol>
             <symbol id="i-ipad" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3.5" y="2.5" width="17" height="19" rx="2.6" /><path d="M11 18.6h2" /></g></symbol>
@@ -61,7 +52,7 @@
         <header class="topbar">
             <div class="wrap topbar-inner">
                 <a class="brand" href="index.html" aria-label="HabitsFlow home">
-                    <span class="brand-mark"><svg><use href="#i-check" /></svg></span>
+                    <img class="brand-mark" src="icon/icon-512.jpg" alt="" width="30" height="30" />
                     <span>HabitsFlow</span>
                 </a>
 
@@ -87,7 +78,7 @@
             <section class="hero" id="top" data-section>
                 <div class="wrap hero-grid">
                     <div class="hero-copy">
-                        <p class="eyebrow" data-today-label>Your daily routine</p>
+                        <p class="eyebrow">Habit tracker &amp; focus timer</p>
                         <h1>Build habits<br />that <span class="flow-word">flow</span>.</h1>
                         <p class="lead">
                             HabitsFlow keeps routines light: create a habit in seconds, check it off with a tap, stay on task with a built-in Pomodoro timer and watch your progress add up — on iPhone, iPad and Mac.
@@ -112,96 +103,13 @@
                         </ul>
                     </div>
 
-                    <!-- Interactive replica of the Today screen -->
                     <div class="hero-device">
                         <div class="device">
-                            <div class="device-screen hf-screen" id="todayScreen">
-                                <div class="hf-status" aria-hidden="true">
-                                    <span>9:41</span>
-                                    <span class="hf-status-icons">
-                                        <svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="5" y="5.5" width="3" height="6.5" rx="1" /><rect x="10" y="3" width="3" height="9" rx="1" /><rect x="15" y="0" width="3" height="12" rx="1" /></svg>
-                                        <svg viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".45" /><rect x="2.5" y="2.5" width="15" height="7" rx="2" /><rect x="23" y="4" width="2" height="4" rx="1" opacity=".45" /></svg>
-                                    </span>
-                                </div>
-
-                                <div class="hf-head">
-                                    <div>
-                                        <p class="hf-date" data-today-label>Sunday, October 11</p>
-                                        <p class="hf-greeting" data-greeting>Good evening</p>
-                                    </div>
-                                    <span class="hf-fab" aria-hidden="true"><svg><use href="#i-plus" /></svg></span>
-                                </div>
-
-                                <div class="hf-seg" aria-hidden="true">
-                                    <span class="is-on">Today</span><span>Week</span><span>Calendar</span>
-                                </div>
-
-                                <div class="hf-card hf-progress">
-                                    <div class="hf-progress-top">
-                                        <div class="hf-ring">
-                                            <svg viewBox="0 0 44 44" aria-hidden="true">
-                                                <circle class="hf-ring-track" cx="22" cy="22" r="18" />
-                                                <circle class="hf-ring-fill" cx="22" cy="22" r="18" id="todayRing" />
-                                            </svg>
-                                            <svg class="hf-ring-check"><use href="#i-check" /></svg>
-                                        </div>
-                                        <div>
-                                            <p class="hf-label">Daily progress</p>
-                                            <p class="hf-count"><strong id="todayDone">1</strong><span>/4</span></p>
-                                            <p class="hf-sub" id="todayLeft" aria-live="polite">3 habits to go</p>
-                                        </div>
-                                    </div>
-                                    <div class="hf-weekrow" aria-hidden="true">
-                                        <span><i>Mo</i><b style="--p: 1"></b></span>
-                                        <span><i>Tu</i><b style="--p: 0.75"></b></span>
-                                        <span><i>We</i><b style="--p: 1"></b></span>
-                                        <span><i>Th</i><b style="--p: 0.5"></b></span>
-                                        <span><i>Fr</i><b style="--p: 1"></b></span>
-                                        <span><i>Sa</i><b style="--p: 0.75"></b></span>
-                                        <span class="is-today"><i>Su</i><b id="todayMini" style="--p: 0.25"></b></span>
-                                    </div>
-                                </div>
-
-                                <ul class="hf-habits">
-                                    <li>
-                                        <button class="hf-habit" type="button" aria-pressed="true" style="--c: var(--h-green)">
-                                            <span class="hf-habit-icon"><svg><use href="#i-clip" /></svg></span>
-                                            <span class="hf-habit-text"><span>English lesson</span><span class="hf-streak"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span>
-                                            <span class="hf-check"><svg><use href="#i-check" /></svg></span>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="hf-habit" type="button" aria-pressed="false" style="--c: var(--h-orange)">
-                                            <span class="hf-habit-icon"><svg><use href="#i-clip" /></svg></span>
-                                            <span class="hf-habit-text"><span>Push ups</span><span class="hf-streak"><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i></i><i></i><small>13:15</small></span></span>
-                                            <span class="hf-check"><svg><use href="#i-check" /></svg></span>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="hf-habit" type="button" aria-pressed="false" style="--c: var(--h-magenta)">
-                                            <span class="hf-habit-icon"><svg><use href="#i-run" /></svg></span>
-                                            <span class="hf-habit-text"><span>Morning workout</span><span class="hf-streak"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
-                                            <span class="hf-check"><svg><use href="#i-check" /></svg></span>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="hf-habit" type="button" aria-pressed="false" style="--c: var(--h-violet)">
-                                            <span class="hf-habit-icon"><svg><use href="#i-clip" /></svg></span>
-                                            <span class="hf-habit-text"><span>Read a book</span><span class="hf-streak"><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
-                                            <span class="hf-check"><svg><use href="#i-check" /></svg></span>
-                                        </button>
-                                    </li>
-                                </ul>
-
-                                <div class="hf-tabbar" aria-hidden="true">
-                                    <span class="is-on"><svg><use href="#i-tab-habits" /></svg>Habits</span>
-                                    <span><svg><use href="#i-tab-focus" /></svg>Focus</span>
-                                    <span><svg><use href="#i-tab-stats" /></svg>Statistics</span>
-                                    <span><svg><use href="#i-tab-settings" /></svg>Settings</span>
-                                </div>
+                            <div class="device-screen">
+                                <img class="shot-light" src="screenshots/web/today-light.jpg" alt="HabitsFlow Today screen with the daily progress ring and a list of habits" width="646" height="1400" />
+                                <img class="shot-dark" src="screenshots/web/today-dark.jpg" alt="HabitsFlow Today screen in the dark theme" width="646" height="1400" />
                             </div>
                         </div>
-                        <p class="hint"><svg><use href="#i-sparkle" /></svg>Tap the habits to check them off</p>
                     </div>
                 </div>
             </section>
@@ -215,129 +123,72 @@
                     </header>
 
                     <div class="bento">
-                        <!-- Week view (interactive) -->
-                        <article class="tile tile-week" data-reveal>
+                        <article class="tile tile-wide tile-week" data-reveal>
                             <div class="tile-copy">
                                 <p class="label">Week by week</p>
                                 <h3>Your whole week at a glance</h3>
-                                <p>Every habit, every day. Tap a day to mark it done — tap again to skip it.</p>
+                                <p>Every habit, every day — what's done, what was skipped and what's still ahead.</p>
                             </div>
-                            <div class="week-grid" id="weekGrid">
-                                <div class="week-days" aria-hidden="true"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span class="is-today">Su</span></div>
-                                <div class="week-row" style="--c: var(--h-green)" data-habit="English lesson">
-                                    <p><span class="mini-icon"><svg><use href="#i-clip" /></svg></span>English lesson<b class="week-count">4/7</b></p>
-                                    <div class="week-cells"><button data-state="done"></button><button data-state="skip"></button><button data-state="done"></button><button data-state="done"></button><button data-state="done"></button><button data-state="empty"></button><button data-state="empty"></button></div>
-                                </div>
-                                <div class="week-row" style="--c: var(--h-orange)" data-habit="Push ups">
-                                    <p><span class="mini-icon"><svg><use href="#i-clip" /></svg></span>Push ups<b class="week-count">3/7</b></p>
-                                    <div class="week-cells"><button data-state="done"></button><button data-state="done"></button><button data-state="skip"></button><button data-state="done"></button><button data-state="empty"></button><button data-state="empty"></button><button data-state="empty"></button></div>
-                                </div>
-                                <div class="week-row" style="--c: var(--h-magenta)" data-habit="Morning workout">
-                                    <p><span class="mini-icon"><svg><use href="#i-run" /></svg></span>Morning workout<b class="week-count">4/7</b></p>
-                                    <div class="week-cells"><button data-state="done"></button><button data-state="skip"></button><button data-state="done"></button><button data-state="done"></button><button data-state="done"></button><button data-state="empty"></button><button data-state="empty"></button></div>
-                                </div>
-                            </div>
+                            <button class="tile-shot" type="button" data-lightbox="features" data-caption="Week view">
+                                <img src="screenshots/web/week.jpg" alt="HabitsFlow week view with done and skipped days for each habit" loading="lazy" width="646" height="1400" />
+                            </button>
                         </article>
 
-                        <!-- Focus timer (interactive) -->
                         <article class="tile tile-focus" data-reveal style="--reveal-delay: 0.08s">
                             <div class="tile-copy">
                                 <p class="label">Focus mode</p>
                                 <h3>A Pomodoro timer built in</h3>
                                 <p>Pick a habit or a task, start a session and let focus time flow into your stats.</p>
                             </div>
-                            <div class="focus-demo">
-                                <div class="focus-ring">
-                                    <svg viewBox="0 0 120 120" aria-hidden="true">
-                                        <circle class="focus-track" cx="60" cy="60" r="52" />
-                                        <circle class="focus-fill" cx="60" cy="60" r="52" id="focusRing" />
-                                    </svg>
-                                    <div class="focus-time">
-                                        <span class="focus-caption">Focusing</span>
-                                        <strong id="focusTime">25:00</strong>
-                                    </div>
-                                </div>
-                                <button class="focus-btn" type="button" id="focusBtn">Start focus</button>
-                            </div>
+                            <button class="tile-shot" type="button" data-lightbox="features" data-caption="Pomodoro focus timer">
+                                <img src="screenshots/web/focus-timer.jpg" alt="HabitsFlow Pomodoro focus timer counting down" loading="lazy" width="646" height="1400" />
+                            </button>
                         </article>
 
-                        <!-- Statistics -->
                         <article class="tile tile-stats" data-reveal>
-                            <p class="label">Statistics</p>
-                            <h3>Progress you can see</h3>
-                            <div class="stats-demo" aria-hidden="true">
-                                <div class="stats-top"><strong>79%</strong><span>completion this week</span></div>
-                                <div class="bars">
-                                    <span style="--h: 0.6"><i>M</i></span>
-                                    <span style="--h: 0.85"><i>T</i></span>
-                                    <span style="--h: 0.45"><i>W</i></span>
-                                    <span style="--h: 1"><i>T</i></span>
-                                    <span style="--h: 0.7"><i>F</i></span>
-                                    <span style="--h: 0.9"><i>S</i></span>
-                                    <span style="--h: 0.55"><i>S</i></span>
-                                </div>
+                            <div class="tile-copy">
+                                <p class="label">Statistics</p>
+                                <h3>Progress you can see</h3>
+                                <p>Week, month and year views with bar and pie charts.</p>
                             </div>
-                            <p>Week, month and year views with bar and pie charts, best streaks and perfect days.</p>
+                            <button class="tile-shot" type="button" data-lightbox="features" data-caption="Statistics">
+                                <img src="screenshots/web/statistics.jpg" alt="HabitsFlow statistics with completion bars for each habit" loading="lazy" width="646" height="1400" />
+                            </button>
                         </article>
 
-                        <!-- Widgets -->
                         <article class="tile tile-widgets" data-reveal style="--reveal-delay: 0.06s">
-                            <p class="label">Widgets</p>
-                            <h3>Check off from the Home Screen</h3>
-                            <div class="widget-demo" aria-hidden="true">
-                                <div class="widget-head"><span class="mini-check"><svg><use href="#i-check" /></svg></span>Today<b>2/3</b></div>
-                                <div class="widget-items">
-                                    <span style="--c: var(--h-green)" class="done">Drink water</span>
-                                    <span style="--c: var(--h-orange)" class="done">Reading</span>
-                                    <span style="--c: var(--h-red)">Workout</span>
-                                </div>
+                            <div class="tile-copy">
+                                <p class="label">Widgets</p>
+                                <h3>Check off from the Home Screen</h3>
+                                <p>Today and This week widgets — no need to open the app.</p>
                             </div>
-                            <p>See today's progress and tick habits without opening the app.</p>
+                            <button class="tile-shot" type="button" data-lightbox="features" data-caption="Home Screen widgets">
+                                <img src="screenshots/web/widgets.jpg" alt="HabitsFlow Today and This week widgets on the Home Screen" loading="lazy" width="646" height="1400" />
+                            </button>
                         </article>
 
-                        <!-- Themes (controls this page's theme) -->
                         <article class="tile tile-themes" data-reveal style="--reveal-delay: 0.12s">
-                            <p class="label">Appearance</p>
-                            <h3>Light, dark or auto</h3>
-                            <div class="theme-seg" role="group" aria-label="Page theme">
-                                <button type="button" data-theme-choice="auto">Auto</button>
-                                <button type="button" data-theme-choice="light">Light</button>
-                                <button type="button" data-theme-choice="dark">Dark</button>
+                            <div class="tile-copy">
+                                <p class="label">Appearance</p>
+                                <h3>Light, dark or auto</h3>
+                                <p>Pick a theme, a background color or a wallpaper.</p>
                             </div>
-                            <div class="swatches" aria-hidden="true">
-                                <i style="--s: #f4f1ea"></i><i style="--s: #f1ecf9"></i><i style="--s: #fbe9e7"></i><i style="--s: #e9f3ea"></i><i style="--s: #e6eefb"></i><i style="--s: #fff4d9"></i><i style="--s: #ece9ff"></i><i style="--s: linear-gradient(135deg, #6e5cf6, #c35cdf)"></i>
-                            </div>
-                            <p>Pick a theme, a background color or a wallpaper. Try the switch — it changes this page too.</p>
+                            <button class="tile-shot tile-shot-ipad" type="button" data-lightbox="features" data-caption="Theme and background settings on iPad">
+                                <img src="screenshots/web/ipad-themes.jpg" alt="HabitsFlow theme settings with light and dark previews" loading="lazy" width="973" height="1400" />
+                            </button>
                         </article>
 
-                        <!-- Schedule (interactive) -->
-                        <article class="tile tile-schedule" data-reveal>
+                        <article class="tile tile-wide tile-schedule" data-reveal>
                             <div class="tile-copy">
                                 <p class="label">Schedule &amp; reminders</p>
                                 <h3>Your days, your rhythm</h3>
-                                <p>Choose the exact days for each habit and get a gentle nudge when it's time.</p>
+                                <p>Choose the exact days for each habit — every day, weekdays or weekends — and get a gentle nudge when it's time.</p>
                             </div>
-                            <div class="schedule-demo" id="schedule">
-                                <div class="schedule-head"><span>Choose days</span><b id="scheduleCount">4 days a week</b></div>
-                                <div class="day-chips">
-                                    <button type="button" aria-pressed="true">Mon</button>
-                                    <button type="button" aria-pressed="false">Tue</button>
-                                    <button type="button" aria-pressed="true">Wed</button>
-                                    <button type="button" aria-pressed="false">Thu</button>
-                                    <button type="button" aria-pressed="true">Fri</button>
-                                    <button type="button" aria-pressed="false">Sat</button>
-                                    <button type="button" aria-pressed="true">Sun</button>
-                                </div>
-                                <div class="quick-chips">
-                                    <button type="button" data-days="0123456">Every day</button>
-                                    <button type="button" data-days="01234">Weekdays</button>
-                                    <button type="button" data-days="56">Weekends</button>
-                                </div>
-                                <div class="reminder"><svg><use href="#i-bell" /></svg><span>Reminder</span><b>13:15</b></div>
-                            </div>
+                            <button class="tile-shot tile-shot-ipad" type="button" data-lightbox="features" data-caption="Adding a habit on iPad">
+                                <img src="screenshots/web/ipad-add-habit.jpg" alt="HabitsFlow Add Habit sheet with chosen days and a reminder" loading="lazy" width="973" height="1400" />
+                            </button>
                         </article>
 
-                        <!-- iCloud sync -->
                         <article class="tile tile-sync" data-reveal style="--reveal-delay: 0.08s">
                             <div class="tile-copy">
                                 <p class="label">Private iCloud sync</p>
@@ -529,7 +380,7 @@
         <footer class="footer">
             <div class="wrap footer-inner">
                 <a class="brand" href="index.html">
-                    <span class="brand-mark"><svg><use href="#i-check" /></svg></span>
+                    <img class="brand-mark" src="icon/icon-512.jpg" alt="" width="30" height="30" />
                     <span>HabitsFlow</span>
                 </a>
                 <nav class="footer-links" aria-label="Footer">
@@ -553,6 +404,5 @@
         </dialog>
 
         <script src="../js/app-page.js" defer></script>
-        <script src="app.js" defer></script>
     </body>
 </html>

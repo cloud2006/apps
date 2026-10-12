@@ -22,16 +22,12 @@
             btn.dataset.state = isDark ? "dark" : "light";
             btn.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
         });
-        root.dispatchEvent(new CustomEvent("themechange", { detail: { theme: currentTheme() } }));
     };
 
-    // theme: "light" | "dark" | null (null follows the system again)
     const setTheme = (theme) => {
-        if (theme) root.dataset.theme = theme;
-        else delete root.dataset.theme;
+        root.dataset.theme = theme;
         try {
-            if (themeKey && theme) localStorage.setItem(themeKey, theme);
-            else if (themeKey) localStorage.removeItem(themeKey);
+            if (themeKey) localStorage.setItem(themeKey, theme);
         } catch (e) {
             // Storage can be unavailable (private mode); the theme still applies for this visit.
         }
@@ -43,8 +39,6 @@
     });
     darkQuery.addEventListener("change", syncToggles);
     if (themeKey) syncToggles();
-
-    window.appPage = { setTheme, currentTheme };
 
     // Scroll reveal
     const revealEls = document.querySelectorAll("[data-reveal]");

@@ -364,24 +364,11 @@ a.app-tile:hover .tile-icon {
     transform: rotate(-6deg) scale(1.05);
 }
 
-.tile-icon svg {
-    width: 34px;
-    height: 34px;
-}
-
 .tile-icon img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.tile-icon-habits {
-    background: linear-gradient(135deg, #6f5df5, #bb55db);
-}
-
-.tile-icon-water {
-    background: linear-gradient(160deg, #5db6f8, #2f6fd6);
 }
 
 .tile-icon-freeriders {
