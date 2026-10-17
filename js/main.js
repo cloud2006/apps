@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Copy Email Function
 function copyEmail() {
-    const email = "dev.pavlo.antoniuk@gmail.com";
+    const email = "support@antcraft.dev";
     navigator.clipboard.writeText(email).then(() => {
         const btn = document.getElementById("copyBtn");
         if (btn) {
