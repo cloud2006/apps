@@ -306,4 +306,11 @@ footer {
     .meta-info {
         gap: 0.75rem;
     }
+    /* Section anchors repeat the pills below the title; keep the header on one line */
+    .nav-links .nav-link[href^="#"] {
+        display: none;
+    }
+    .back-btn {
+        white-space: nowrap;
+    }
 }

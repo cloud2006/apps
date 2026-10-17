@@ -87,15 +87,11 @@ header {
     text-decoration: none;
 }
 
-.brand-avatar {
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #38bdf8, #818cf8);
-    display: grid;
-    place-items: center;
-    font-size: 1rem;
-    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+.brand-logo {
+    width: 36px;
+    height: 36px;
+    display: block;
+    flex-shrink: 0;
 }
 
 .nav-menu {
@@ -689,23 +685,6 @@ footer {
     gap: 1.5rem;
 }
 
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    list-style: none;
-}
-
-.footer-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.footer-links a:hover {
-    color: var(--text-primary);
-}
-
 /* =======================================================
    RESPONSIVE BREAKPOINTS: Tablet & Mobile
    ======================================================= */
@@ -759,9 +738,5 @@ footer {
         flex-direction: column;
         text-align: center;
         gap: 1.25rem;
-    }
-
-    .footer-links {
-        justify-content: center;
     }
 }
