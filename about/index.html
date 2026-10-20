@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>About · antcraft.dev</title>
+        <meta
+            name="description"
+            content="Pavlo Antoniuk — an indie developer from Ukraine building privacy-respecting apps for iOS and macOS."
+        />
+        <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+        <!-- Google Fonts: Plus Jakarta Sans -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+        />
+        <!-- External Stylesheet -->
+        <link rel="stylesheet" href="../css/main.css?v=400fd51beb" />
+    </head>
+    <body>
+        <!-- Sticky Navigation Header -->
+        <header>
+            <div class="nav">
+                <a href="../index.html" class="brand">
+                    <img class="brand-logo" src="../brand/logo/antcraft-mark-small.svg" alt="" width="36" height="36" />
+                    <span>antcraft.dev</span>
+                </a>
+
+                <button
+                    class="hamburger"
+                    id="navToggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../index.html#apps" class="nav-link">Apps</a></li>
+                    <li><a href="./" class="nav-link" aria-current="page">About</a></li>
+                    <li><a href="../index.html#support" class="nav-link">Support</a></li>
+                    <li><a href="../privacypolicy/privacy.html" class="nav-link">Privacy & Terms</a></li>
+                    <li><a href="mailto:support@antcraft.dev" class="nav-cta">Get in Touch</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="container hero">
+                <div class="pill-badge">
+                    <span class="pill-dot"></span>
+                    <span>About</span>
+                </div>
+
+                <h1>Hi, I’m Pavlo Antoniuk.</h1>
+
+                <p class="hero-lead">
+                    I’m an indie developer from Ukraine 🇺🇦 building apps for iOS and macOS.
+                </p>
+            </section>
+
+            <!-- Privacy Section -->
+            <section class="container section about-section">
+                <div class="about-story">
+                    <h2 class="section-title">Your data stays yours</h2>
+                    <p>
+                        I build my apps with respect for your personal data. Unless it’s truly necessary, I don’t use any analytics tools and I don’t collect data about the people who use my apps.
+                    </p>
+                    <p>
+                        In the rare cases where an app does rely on analytics, I say so openly in its <a href="../privacypolicy/privacy.html">Privacy Policy</a> — no surprises, no fine print.
+                    </p>
+                </div>
+
+                <div class="about-values">
+                    <div class="value-card value-privacy">
+                        <span class="value-icon" aria-hidden="true">🔒</span>
+                        <h3>Private by default</h3>
+                        <p>Your data lives on your device and, if you choose, in your own iCloud — not on my servers.</p>
+                    </div>
+                    <div class="value-card value-analytics">
+                        <span class="value-icon" aria-hidden="true">📊</span>
+                        <h3>No analytics without need</h3>
+                        <p>No tracking or data collection unless an app genuinely needs it — and then it’s disclosed.</p>
+                    </div>
+                    <div class="value-card value-native">
+                        <span class="value-icon" aria-hidden="true">✦</span>
+                        <h3>Native to Apple platforms</h3>
+                        <p>Made for iPhone, iPad and Mac, with attention to speed, clean interfaces and zero clutter.</p>
+                    </div>
+                </div>
+
+                <div class="hero-actions about-actions">
+                    <a href="../index.html#apps" class="btn-primary">
+                        <span>Explore Apps</span>
+                        <span>→</span>
+                    </a>
+                    <a href="mailto:support@antcraft.dev" class="btn-secondary">
+                        <span>Say Hello</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container footer-content">
+                <div>
+                    © <span id="year"></span> <strong>antcraft.dev</strong>. All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <!-- External JavaScript -->
+        <script src="../js/main.js?v=9a2e1a627b"></script>
+    </body>
+</html>

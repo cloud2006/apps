@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Privacy Policy — AppShipper</title>
+        <meta
+            name="description"
+            content="How AppShipper for Mac handles your data: no servers, no tracking, everything stays on your Mac."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/legal.css?v=5fe9ad664f" />
+    </head>
+    <body>
+        <header>
+            <div class="nav-container">
+                <a href="../index.html" class="brand">
+                    <img src="icon/icon-512.jpg" alt="AppShipper icon" class="brand-icon" />
+                    <span>AppShipper</span>
+                    <span class="brand-badge">Coming Soon</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="terms.html" class="nav-link">Terms of Use</a>
+                    <a href="../index.html" class="nav-link back-btn">← Back to Apps</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="doc-header">
+                <span class="doc-tag">Legal Document</span>
+                <h1>AppShipper Privacy Policy</h1>
+                <div class="meta-info">
+                    <span><strong>Effective Date:</strong> October 20, 2026</span>
+                    <span><strong>App:</strong> AppShipper (macOS)</span>
+                </div>
+            </div>
+
+            <div class="doc-card">
+                <div class="callout">
+                    <strong>In short</strong>
+                    <ul>
+                        <li>AppShipper has no servers. We don't collect, store, sell or share your data.</li>
+                        <li>No accounts, analytics, advertising or tracking.</li>
+                        <li>Your App Store Connect key and AI keys stay in your Mac's Keychain.</li>
+                        <li>The app talks to Apple on your behalf. It sends text to an AI provider only if you choose one and add your own key.</li>
+                    </ul>
+                </div>
+
+                <section>
+                    <h2>Who we are</h2>
+                    <p>AppShipper is a Mac app made by Pavlo Antoniuk, an independent developer (“we”, “us”). This policy explains what happens to information when you use AppShipper. If you have a question, write to <a href="mailto:support@antcraft.dev">support@antcraft.dev</a>.</p>
+                </section>
+
+                <section>
+                    <h2>What stays on your Mac</h2>
+                    <p>AppShipper keeps everything it needs on your Mac, inside the app's private storage, which macOS protects for each app:</p>
+                    <ul>
+                        <li><strong>App Store Connect API keys:</strong> the issuer ID, key ID and private key you add. These are stored in the macOS Keychain.</li>
+                        <li><strong>AI provider API keys</strong>, if you add any. These are also stored in the Keychain.</li>
+                        <li><strong>Your work:</strong> the list of connected accounts and monitored apps, metadata drafts, Screenshot Studio projects, Launchpad channels and posts, rating history, pricing plans and preferences.</li>
+                        <li><strong>Caches</strong> of data the app downloaded, such as ratings and app icons.</li>
+                        <li><strong>Diagnostic logs</strong> written to your Mac. Logs remove private keys, tokens and API keys before writing. They never leave your Mac unless you export or send them yourself.</li>
+                    </ul>
+                    <p>We have no access to any of this.</p>
+                </section>
+
+                <section>
+                    <h2>Who AppShipper connects to</h2>
+
+                    <h3>Apple: App Store Connect API</h3>
+                    <p>AppShipper signs requests with your own API key and sends them directly to Apple (<code>api.appstoreconnect.apple.com</code>). It reads and, when you confirm, changes data about your apps:</p>
+                    <ul>
+                        <li>metadata and versions;</li>
+                        <li>screenshots;</li>
+                        <li>customer reviews and your replies;</li>
+                        <li>in-app purchases, subscriptions and prices.</li>
+                    </ul>
+                    <p>Apple handles this data under its own terms and <a href="https://www.apple.com/legal/privacy/">privacy policy</a>.</p>
+
+                    <h3>Apple: public App Store data</h3>
+                    <p>To show ratings by country, AppShipper asks Apple's public lookup service (<code>itunes.apple.com</code>) for your apps' ratings. These requests contain only app IDs and country codes.</p>
+
+                    <h3>Apple: purchases</h3>
+                    <p>AppShipper Pro is sold through the App Store. Apple processes the payment, and we never receive your payment details. The app checks your purchase on your Mac using StoreKit. Apple gives us only sales reports that don't identify you.</p>
+
+                    <h3>AI providers (optional)</h3>
+                    <p>By default, AppShipper uses Apple Intelligence on your Mac, and nothing leaves your computer. You can choose a cloud AI provider instead and add your own API key. In that case, AppShipper sends the text needed for the task you ask for to that provider, under your account with them:</p>
+                    <ul>
+                        <li>App Store metadata, to translate it;</li>
+                        <li>screenshot captions, to translate them;</li>
+                        <li>the text of a customer review and its author's nickname, when you ask for a draft reply.</li>
+                    </ul>
+                    <p>That provider's own terms and privacy policy apply to what you send. We don't receive it.</p>
+
+                    <h3>Public pricing data</h3>
+                    <p>When you update the pricing indexes used for localized price suggestions, AppShipper downloads public statistics from the World Bank (<code>api.worldbank.org</code>) and The Economist's Big Mac index (<code>raw.githubusercontent.com</code>). These requests contain no information about you.</p>
+
+                    <h3>Links you open</h3>
+                    <p>Some buttons open websites in your browser, such as App Store Connect, Apple documentation or the communities you track in Launchpad. What happens there is covered by those websites' own policies.</p>
+                </section>
+
+                <section>
+                    <h2>When you contact us</h2>
+                    <p>If you email us, we receive your email address and whatever you write. Feedback and bug reports may also include your app version, build and macOS version, and any logs you choose to attach. We use this only to reply and to fix problems. We delete it when we no longer need it, or sooner if you ask.</p>
+                </section>
+
+                <section>
+                    <h2>Crash reports</h2>
+                    <p>AppShipper has no analytics or crash-reporting code of its own. If you turned on “Share with app developers” in macOS, Apple may give us crash reports and usage statistics that don't identify you.</p>
+                </section>
+
+                <section>
+                    <h2>Your customers' data</h2>
+                    <p>Customer reviews include reviewers' nicknames and what they wrote. AppShipper processes this data only on your Mac and on your behalf. It goes to an AI provider only when you ask for a draft reply with a cloud provider selected. You remain responsible for handling your customers' data under the laws that apply to you.</p>
+                </section>
+
+                <section>
+                    <h2>Sample data</h2>
+                    <p>“Explore Sample Data” shows made-up apps, reviews and people. It sends nothing to App Store Connect and is discarded when you leave it.</p>
+                </section>
+
+                <section>
+                    <h2>Deleting your data</h2>
+                    <ul>
+                        <li>Removing an account in AppShipper ▸ Settings ▸ Accounts deletes its key from the Keychain and its list of monitored apps.</li>
+                        <li>Removing an AI provider key in Settings ▸ AI Providers deletes it from the Keychain.</li>
+                        <li>To remove everything, delete AppShipper with Launchpad. Or delete the app, then its folder in <code>~/Library/Containers</code>.</li>
+                    </ul>
+                    <p>Data you sent to App Store Connect or to an AI provider is kept by them under their own policies.</p>
+                </section>
+
+                <section>
+                    <h2>Security</h2>
+                    <p>Keys are kept in the macOS Keychain. All network connections use HTTPS. The app runs in the macOS App Sandbox, which limits it to its own storage and the files you choose.</p>
+                </section>
+
+                <section>
+                    <h2>Children</h2>
+                    <p>AppShipper is a tool for app developers and is not directed to children. We don't knowingly collect information from anyone, children included.</p>
+                </section>
+
+                <section>
+                    <h2>Your rights</h2>
+                    <p>Depending on where you live, you may have the right to access, correct, delete or move your personal data, and to object to its use. This includes the GDPR in the EU and UK, and the CCPA in California. We don't hold personal data about you except emails you send us. To use any of these rights, write to us. We don't sell or share personal information as the CCPA defines it.</p>
+                </section>
+
+                <section>
+                    <h2>Changes to this policy</h2>
+                    <p>If we change this policy, we'll update this page and the date at the top. If a change affects what the app does with your data, we'll also mention it in the app's release notes.</p>
+                </section>
+
+                <section>
+                    <h2>Contact</h2>
+                    <p>Pavlo Antoniuk · <a href="mailto:support@antcraft.dev">support@antcraft.dev</a></p>
+                </section>
+            </div>
+
+            <p class="doc-note">App Store, App Store Connect and Apple Intelligence are trademarks of Apple Inc. AppShipper is an independent app and is not affiliated with or endorsed by Apple.</p>
+        </main>
+
+        <footer>
+            <p>© <span id="year"></span> AppShipper. All rights reserved. · <a href="terms.html">Terms of Use</a> · <a href="../index.html">Apps Portfolio</a></p>
+        </footer>
+
+        <script src="../js/legal.js?v=f28a9879fe"></script>
+    </body>
+</html>

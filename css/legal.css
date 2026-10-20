@@ -267,6 +267,38 @@ a:hover {
     color: #bae6fd;
 }
 
+.callout ul {
+    margin: 0.75rem 0 0;
+    gap: 0.5rem;
+}
+
+.callout li {
+    color: #bae6fd;
+}
+
+.doc-card h3 {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.5rem;
+}
+
+code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.875em;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    padding: 0.05rem 0.35rem;
+    overflow-wrap: anywhere;
+}
+
+.doc-note {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
 .alert-box {
     background: var(--warning-bg);
     border: 1px solid var(--warning-border);
