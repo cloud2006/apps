@@ -511,6 +511,8 @@ header {
 }
 
 .tile-links a {
+    position: relative;
+    z-index: 2;
     padding: 0.45rem 0.85rem;
     border: 1px solid var(--card-border);
     border-radius: 9999px;

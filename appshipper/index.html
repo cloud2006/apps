@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>AppShipper — Coming Soon</title>
+        <meta
+            name="description"
+            content="AppShipper for Mac. Will be shipped soon."
+        />
+        <link rel="icon" href="icon/icon-512.jpg" />
+        <link rel="apple-touch-icon" href="icon/icon-512.jpg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/legal.css?v=5fe9ad664f" />
+        <style>
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            .soon {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .soon img {
+                width: 112px;
+                height: 112px;
+                border-radius: 26px;
+                box-shadow: 0 20px 40px -12px rgba(43, 179, 168, 0.45);
+            }
+
+            .soon h1 {
+                font-size: clamp(2rem, 6vw, 3rem);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="nav-container">
+                <a href="../index.html" class="brand">
+                    <img src="icon/icon-512.jpg" alt="" class="brand-icon" />
+                    <span>AppShipper</span>
+                    <span class="brand-badge">Coming Soon</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="privacy.html" class="nav-link">Privacy</a>
+                    <a href="terms.html" class="nav-link">Terms</a>
+                    <a href="../index.html" class="nav-link back-btn">← Back to Apps</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="soon">
+            <img src="icon/icon-512.jpg" alt="AppShipper icon" width="112" height="112" />
+            <h1>Will be shipped soon</h1>
+        </main>
+
+        <footer>
+            <p>© <span id="year"></span> AppShipper. All rights reserved. · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
+        </footer>
+
+        <script src="../js/legal.js?v=f28a9879fe"></script>
+    </body>
+</html>
