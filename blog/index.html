@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Blog · antcraft.dev</title>
+        <meta
+            name="description"
+            content="Notes from Pavlo Antoniuk, an indie developer building privacy-respecting apps for iOS and macOS."
+        />
+        <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+        <!-- Google Fonts: Plus Jakarta Sans -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+        />
+        <!-- External Stylesheet -->
+        <link rel="stylesheet" href="../css/main.css?v=bebbade032" />
+    </head>
+    <body>
+        <!-- Sticky Navigation Header -->
+        <header>
+            <div class="nav">
+                <a href="../index.html" class="brand">
+                    <img class="brand-logo" src="../brand/logo/antcraft-mark-small.svg" alt="" width="36" height="36" />
+                    <span>antcraft.dev</span>
+                </a>
+
+                <button
+                    class="hamburger"
+                    id="navToggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../index.html#apps" class="nav-link">Apps</a></li>
+                    <li><a href="../about/" class="nav-link">About</a></li>
+                    <li><a href="../blog/" class="nav-link" aria-current="page">Blog</a></li>
+                    <li><a href="../index.html#support" class="nav-link">Support</a></li>
+                    <li><a href="../privacypolicy/privacy" class="nav-link">Privacy & Terms</a></li>
+                    <li><a href="mailto:support@antcraft.dev" class="nav-cta">Get in Touch</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <section class="container hero">
+                <div class="pill-badge">
+                    <span class="pill-dot"></span>
+                    <span>Blog</span>
+                </div>
+
+                <h1>Notes from an indie developer.</h1>
+
+                <p class="hero-lead">
+                    Behind the scenes of building apps for Apple platforms — releases, design decisions, privacy and lessons learned along the way.
+                </p>
+            </section>
+
+            <section class="container section" style="padding-top: 0">
+                <div class="post-grid">
+                    <article class="post-card">
+                        <div class="post-meta">
+                            <span class="post-tag">Privacy</span>
+                            <time datetime="2026-11-02">Nov 2, 2026</time>
+                            <span>· 3 min read</span>
+                        </div>
+                        <h3><a href="why-my-apps-dont-track-you/">Why my apps don’t track you</a></h3>
+                        <p>No analytics SDKs, no ad networks, no servers holding your data. Here’s why — and what it means in practice.</p>
+                        <span class="link-arrow" aria-hidden="true">Read →</span>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-meta">
+                            <span class="post-tag">News</span>
+                            <time datetime="2026-11-02">Nov 2, 2026</time>
+                            <span>· 2 min read</span>
+                        </div>
+                        <h3><a href="hello-world/">Hello, world: welcome to the blog</a></h3>
+                        <p>Why antcraft.dev now has a blog and what you can expect to read here.</p>
+                        <span class="link-arrow" aria-hidden="true">Read →</span>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container footer-content">
+                <div>
+                    © <span id="year"></span> <strong>antcraft.dev</strong>. All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <!-- External JavaScript -->
+        <script src="../js/main.js?v=9a2e1a627b"></script>
+    </body>
+</html>

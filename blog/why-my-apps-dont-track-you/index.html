@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Why my apps don’t track you · antcraft.dev</title>
+        <meta
+            name="description"
+            content="No analytics SDKs, no ad networks, no servers holding your data. Here’s why — and what it means in practice."
+        />
+        <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+        <!-- Google Fonts: Plus Jakarta Sans -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+        />
+        <!-- External Stylesheet -->
+        <link rel="stylesheet" href="../../css/main.css?v=bebbade032" />
+    </head>
+    <body>
+        <!-- Sticky Navigation Header -->
+        <header>
+            <div class="nav">
+                <a href="../../index.html" class="brand">
+                    <img class="brand-logo" src="../../brand/logo/antcraft-mark-small.svg" alt="" width="36" height="36" />
+                    <span>antcraft.dev</span>
+                </a>
+
+                <button
+                    class="hamburger"
+                    id="navToggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../../index.html#apps" class="nav-link">Apps</a></li>
+                    <li><a href="../../about/" class="nav-link">About</a></li>
+                    <li><a href="../../blog/" class="nav-link" aria-current="page">Blog</a></li>
+                    <li><a href="../../index.html#support" class="nav-link">Support</a></li>
+                    <li><a href="../../privacypolicy/privacy" class="nav-link">Privacy & Terms</a></li>
+                    <li><a href="mailto:support@antcraft.dev" class="nav-cta">Get in Touch</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <article class="container post">
+                <a class="post-back" href="../">← All posts</a>
+                <div class="post-header">
+                    <div class="post-meta">
+                        <span class="post-tag">Privacy</span>
+                        <time datetime="2026-11-02">Nov 2, 2026</time>
+                        <span>· 3 min read</span>
+                    </div>
+                    <h1>Why my apps don’t track you</h1>
+                    <p class="post-lead">No analytics SDKs, no ad networks, no servers holding your data. Here’s why I build apps this way — and what it means for you in practice.</p>
+                </div>
+
+                <div class="prose">
+                    <p>
+                        When you open a habit tracker or a water reminder, you’re sharing something personal: your routines, your goals, sometimes your bad days. I don’t think an app needs to send any of that anywhere to be useful.
+                    </p>
+
+                    <h2>Your data lives with you</h2>
+                    <p>
+                        Everything you create in my apps is stored on your device. If you turn on iCloud sync, it goes to <strong>your own iCloud account</strong> — managed by Apple, encrypted, and invisible to me. I don’t run servers that keep copies of your habits, logs or collections.
+                    </p>
+
+                    <h2>No analytics unless it’s truly needed</h2>
+                    <p>
+                        A lot of apps ship with several third-party SDKs that quietly report how you use them. I avoid that by default. Most product decisions can be made from App Store reviews and, most importantly, from the emails people send me.
+                    </p>
+                    <blockquote>
+                        If an app ever does rely on analytics, it’s stated openly in that app’s Privacy Policy — no surprises, no fine print.
+                    </blockquote>
+
+                    <h2>What this means in practice</h2>
+                    <ul>
+                        <li>No ads and no ad-tracking identifiers.</li>
+                        <li>No accounts to create just to try an app.</li>
+                        <li>Your data keeps working offline, because it never had to leave your device.</li>
+                        <li>When you delete the app, your local data goes with it.</li>
+                    </ul>
+
+                    <h2>The trade-off</h2>
+                    <p>
+                        Without tracking I know less about how people use my apps. That’s why feedback matters so much: if something is confusing, missing or broken, write to <a href="mailto:support@antcraft.dev">support@antcraft.dev</a>. I read every message.
+                    </p>
+                    <p>
+                        You can find all the details in the <a href="../../privacypolicy/privacy">Privacy Policy</a>.
+                    </p>
+                </div>
+
+                <div class="post-footer">
+                    <span>Written by <strong>Pavlo Antoniuk</strong></span>
+                    <a href="../" class="link-arrow">← Back to all posts</a>
+                </div>
+            </article>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container footer-content">
+                <div>
+                    © <span id="year"></span> <strong>antcraft.dev</strong>. All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <!-- External JavaScript -->
+        <script src="../../js/main.js?v=9a2e1a627b"></script>
+    </body>
+</html>
