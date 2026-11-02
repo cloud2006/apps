@@ -832,73 +832,31 @@ details[open] summary.faq-question::after {
     line-height: 1.6;
 }
 
-/* --- About Me (home) --- */
-.about-me {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: clamp(1.25rem, 4vw, 2.5rem);
-    align-items: center;
-    padding: clamp(1.5rem, 4vw, 2.75rem);
+.btn-social svg {
+    flex-shrink: 0;
+}
+
+.about-cats {
+    text-align: center;
+}
+
+.about-cats .section-desc {
+    margin: 0 auto;
+}
+
+.cats-photo {
+    max-width: 480px;
+    margin: clamp(1.5rem, 4vw, 2.25rem) auto 0;
+    overflow: hidden;
     border: 1px solid var(--card-border);
     border-radius: var(--radius-lg);
-    background:
-        radial-gradient(30rem 18rem at 0% 0%, rgba(129, 140, 248, 0.14), transparent 70%),
-        var(--card-bg);
     box-shadow: var(--shadow-card);
 }
 
-.about-avatar {
-    display: grid;
-    width: clamp(88px, 14vw, 128px);
-    aspect-ratio: 1;
-    place-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
-    color: #090a0f;
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    box-shadow: 0 16px 36px -14px rgba(129, 140, 248, 0.6);
-}
-
-.about-me h3 {
-    margin-bottom: 0.6rem;
-    font-size: clamp(1.35rem, 2.8vw, 1.75rem);
-    font-weight: 800;
-    letter-spacing: -0.025em;
-}
-
-.about-me p {
-    color: var(--text-secondary);
-    font-size: clamp(0.98rem, 1.8vw, 1.05rem);
-    line-height: 1.7;
-}
-
-.about-me p + p {
-    margin-top: 0.75rem;
-}
-
-.about-facts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1.25rem 0 1.5rem;
-    list-style: none;
-}
-
-.about-facts li {
-    padding: 0.35rem 0.85rem;
-    border: 1px solid var(--card-border);
-    border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.04);
-    color: var(--text-primary);
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.about-me .hero-actions {
-    justify-content: flex-start;
+.cats-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 /* --- Blog --- */
@@ -1179,19 +1137,5 @@ footer {
         flex-direction: column;
         text-align: center;
         gap: 1.25rem;
-    }
-
-    .about-me {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .about-avatar {
-        margin: 0 auto;
-    }
-
-    .about-facts,
-    .about-me .hero-actions {
-        justify-content: center;
     }
 }
