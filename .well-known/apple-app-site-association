@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["636693BZU3.com.AnimeWallet"],
+        "components": [
+          { "/": "/animewallet/c/*", "comment": "AnimeWallet shared collection" },
+          { "/": "/animewallet/u/*", "comment": "AnimeWallet curator profile" }
+        ]
+      }
+    ]
+  }
+}

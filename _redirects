@@ -1,0 +1,6 @@
+# Cloudflare Pages rewrites (status 200: the URL stays, the page comes from the target).
+
+# AnimeWallet share links open the app (Universal Links, .well-known/apple-app-site-association).
+# Without the app, or opened from this same site, they land on this page.
+/animewallet/c/*  /animewallet/open/  200
+/animewallet/u/*  /animewallet/open/  200

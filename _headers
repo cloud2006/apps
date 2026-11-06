@@ -1,0 +1,6 @@
+# Cloudflare Pages response headers.
+
+# Universal Links: Apple fetches this file with no redirects and expects JSON.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600

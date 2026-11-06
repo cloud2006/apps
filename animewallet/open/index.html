@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-theme-key="animewallet-theme">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <title>Open in AnimeWallet</title>
+        <meta name="description" content="This link opens a collection or a curator's profile in AnimeWallet, a cozy anime tracker for iPhone." />
+        <meta name="robots" content="noindex" />
+        <meta property="og:title" content="Shared from AnimeWallet" />
+        <meta property="og:description" content="A collection or curator shared from AnimeWallet, a cozy anime tracker for iPhone." />
+        <meta property="og:image" content="https://www.antcraft.dev/animewallet/icon/icon-512.jpg" />
+        <meta name="theme-color" content="#eef0f3" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0f1424" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" href="/animewallet/icon/icon-512.jpg" />
+        <link rel="apple-touch-icon" href="/animewallet/icon/icon-512.jpg" />
+        <script>
+            (function () {
+                var root = document.documentElement;
+                root.classList.add("js");
+                try {
+                    var saved = localStorage.getItem(root.dataset.themeKey);
+                    if (saved === "light" || saved === "dark") root.dataset.theme = saved;
+                } catch (e) {}
+            })();
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&display=swap" rel="stylesheet" />
+        <!-- Absolute paths: this page is served at /animewallet/c/{id} and /animewallet/u/{id}. -->
+        <link rel="stylesheet" href="/css/app-page.css?v=f8c9334227" />
+        <link rel="stylesheet" href="/animewallet/style.css?v=8449314356" />
+        <style>
+            .open-hero {
+                min-height: 70vh;
+                display: grid;
+                place-items: center;
+                text-align: center;
+            }
+            .open-card {
+                max-width: 460px;
+                display: grid;
+                justify-items: center;
+                gap: 18px;
+            }
+            .open-card img {
+                width: 96px;
+                height: 96px;
+                border-radius: 22px;
+                box-shadow: var(--shadow);
+            }
+            .open-actions {
+                display: grid;
+                gap: 12px;
+                width: 100%;
+            }
+            .open-note {
+                color: var(--ink-2);
+                font-size: 0.95rem;
+            }
+        </style>
+    </head>
+    <body>
+        <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+            <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2" /><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4" /></g></symbol>
+            <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.2 8.2 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" /></symbol>
+        </svg>
+
+        <div class="sky" aria-hidden="true">
+            <span class="moon"></span>
+        </div>
+
+        <header class="topbar">
+            <div class="wrap topbar-inner">
+                <a class="brand" href="/animewallet/" aria-label="AnimeWallet home">
+                    <img src="/animewallet/icon/icon-512.jpg" alt="" width="34" height="34" />
+                    <span>AnimeWallet</span>
+                </a>
+                <div class="topbar-actions">
+                    <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+                        <svg class="when-light"><use href="#i-moon" /></svg>
+                        <svg class="when-dark"><use href="#i-sun" /></svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero open-hero">
+                <div class="wrap open-card">
+                    <img src="/animewallet/icon/icon-512.jpg" alt="AnimeWallet icon" />
+                    <h1 data-open-title>Open in AnimeWallet</h1>
+                    <p class="lead" data-open-lead>
+                        Someone shared something from AnimeWallet with you. Open it in the app on your iPhone.
+                    </p>
+                    <div class="open-actions">
+                        <a class="btn-steel" href="/animewallet/" data-open-app>Open in AnimeWallet</a>
+                        <a class="pill-link" href="/animewallet/">Learn about AnimeWallet</a>
+                    </div>
+                    <p class="open-note">
+                        AnimeWallet is coming soon to the App Store. If the app is installed and nothing happens, long-press the link and choose “Open in AnimeWallet”.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            // /animewallet/c/{id}?key=… → animewallet://c/{id}?key=… (the app's own scheme, which
+            // also works when Safari is already on this site and won't follow a Universal Link).
+            (function () {
+                var match = location.pathname.match(/^\/animewallet\/(c|u)\/([A-Za-z0-9-]{1,64})\/?$/);
+                if (!match) return;
+                var kind = match[1];
+                var key = new URLSearchParams(location.search).get("key");
+                var link = "animewallet://" + kind + "/" + match[2];
+                if (kind === "c" && key && /^[A-Za-z0-9]{1,64}$/.test(key)) link += "?key=" + key;
+                document.querySelector("[data-open-app]").href = link;
+                document.querySelector("[data-open-title]").textContent =
+                    kind === "c" ? "A collection for you" : "A curator to follow";
+                document.querySelector("[data-open-lead]").textContent =
+                    kind === "c"
+                        ? "Someone shared an anime collection from AnimeWallet. Open it in the app on your iPhone."
+                        : "Someone shared a curator's profile from AnimeWallet. Open it in the app on your iPhone.";
+            })();
+        </script>
+        <script src="/js/app-page.js?v=a7c764f67f" defer></script>
+        <script src="/animewallet/app.js?v=5fd046da33" defer></script>
+    </body>
+</html>
