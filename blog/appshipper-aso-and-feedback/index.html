@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>How AppShipper makes ASO and user feedback easier · antcraft.dev</title>
+        <meta
+            name="description"
+            content="Translated metadata, localized screenshots, low-rated reviews and rating changes by country, without the repetitive work."
+        />
+        <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+        <!-- Google Fonts: Plus Jakarta Sans -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+        />
+        <!-- External Stylesheet -->
+        <link rel="stylesheet" href="../../css/main.css?v=0d8f8c4812" />
+    </head>
+    <body>
+        <!-- Sticky Navigation Header -->
+        <header>
+            <div class="nav">
+                <a href="../../index.html" class="brand">
+                    <img class="brand-logo" src="../../brand/logo/antcraft-mark-small.svg" alt="" width="36" height="36" />
+                    <span>antcraft.dev</span>
+                </a>
+
+                <button
+                    class="hamburger"
+                    id="navToggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../../index.html#apps" class="nav-link">Apps</a></li>
+                    <li><a href="../../about/index.html" class="nav-link">About</a></li>
+                    <li><a href="../../blog/index.html" class="nav-link" aria-current="page">Blog</a></li>
+                    <li><a href="../../index.html#support" class="nav-link">Support</a></li>
+                    <li><a href="../../privacypolicy/privacy.html" class="nav-link">Privacy & Terms</a></li>
+                    <li><a href="mailto:support@antcraft.dev" class="nav-cta">Get in Touch</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <article class="container post">
+                <a class="post-back" href="../index.html">← All posts</a>
+                <div class="post-header">
+                    <div class="post-meta">
+                        <span class="post-tag">ASO</span>
+                        <time datetime="2026-11-18">Nov 18, 2026</time>
+                        <span>· 3 min read</span>
+                    </div>
+                    <h1>How AppShipper makes ASO and user feedback easier</h1>
+                    <p class="post-lead">Translated metadata, localized screenshots and a close eye on reviews all help an app on the App Store. They’re also repetitive. Here’s how AppShipper takes care of the busywork.</p>
+                </div>
+
+                <div class="prose">
+                    <p>
+                        App Store Optimization is rarely one clever trick. Much of it is patient, repetitive work: the same fields, the same screenshots and the same checks, multiplied by every language and every app. That’s exactly the kind of work a Mac app can make lighter.
+                    </p>
+
+                    <h2>Translate your metadata in one pass</h2>
+                    <p>
+                        <a href="https://developer.apple.com/app-store/search/">App Store search</a> looks at text such as your app’s name, subtitle and keywords. Apple also <a href="https://developer.apple.com/app-store/product-page/">recommends localizing</a> your product page and tailoring keywords for each market, and notes that a localized page may make people more likely to download your app.
+                    </p>
+                    <p>
+                        In AppShipper, <strong>Translate All Languages</strong> handles the name, subtitle, promotional text, description and What’s New in one run. You can use Apple Intelligence on your Mac or a cloud AI provider with your own API key. Character limits are visible for every field, and you review the result before anything is synced to App Store Connect.
+                    </p>
+                    <p>
+                        Keywords are the deliberate exception. A literal translation rarely matches what people actually type into search, so you write those by hand for each language.
+                    </p>
+                    <figure>
+                        <img src="../../appshipper/screenshots/web/localization.jpg" alt="AppShipper localization view with English metadata next to its German translation and a character count for each field" loading="lazy" width="2000" height="1193" style="display: block; width: 100%; height: auto; border-radius: 12px" />
+                    </figure>
+
+                    <h2>Screenshots that speak your customer’s language</h2>
+                    <p>
+                        Apple says <a href="https://developer.apple.com/app-store/search/">up to three screenshots</a> may appear right in search results, so they’re often the first thing people see. A caption in their own language explains your app at a glance, and that can turn more views into downloads, one of the signals Apple lists for search.
+                    </p>
+                    <p>
+                        Some ASO teams also report that caption text can affect search directly. Apple hasn’t confirmed this, so I’d treat it as a possible bonus rather than the reason to do it.
+                    </p>
+                    <p>
+                        In <strong>Screenshot Studio</strong> you design your slides once and localize only the captions. <strong>Translate All</strong> picks up captions that are missing or out of date. You review them, then upload the set for every language and device size in one go.
+                    </p>
+                    <figure>
+                        <img src="../../appshipper/screenshots/web/screenshot-studio.jpg" alt="AppShipper Screenshot Studio with four iPhone slides, caption fields, and Translate All and Upload buttons" loading="lazy" width="2000" height="1193" style="display: block; width: 100%; height: auto; border-radius: 12px" />
+                    </figure>
+
+                    <h2>Don’t let critical reviews slip by</h2>
+                    <p>
+                        Reviews are some of the most honest feedback you’ll get: what broke, what’s confusing, what people wish your app could do. They matter for discovery too. Apple says <a href="https://developer.apple.com/app-store/search/">ratings and reviews can influence search ranking</a>, and when you reply, <a href="https://developer.apple.com/app-store/ratings-and-reviews/">the reviewer is notified and can update their review</a>.
+                    </p>
+                    <p>
+                        That’s why AppShipper puts them in front of you. By default, the Dashboard’s <strong>Needs Attention</strong> list highlights unanswered reviews with <strong>4 stars or fewer</strong>, with the apps that have the most 1–2 star reviews first. Four stars are included on purpose: those reviews often explain what’s standing between you and a five.
+                    </p>
+                    <p>
+                        One click opens that filtered list, with reviews from every country in one place. You can start from an AI-drafted reply and edit it, or turn on notifications for 1–2 star reviews only.
+                    </p>
+
+                    <h2>See where your ratings are moving</h2>
+                    <p>
+                        Your rating is <a href="https://developer.apple.com/app-store/ratings-and-reviews/">specific to each App Store territory</a>, and a single global number can hide what’s happening in one market.
+                    </p>
+                    <p>
+                        <strong>Ratings by Country</strong> shows the average and number of ratings for each country, plus how that number changed since a check at least a day earlier: <strong>(+3)</strong> in green, <strong>(−3)</strong> in red. Open a country to see a 30-day chart. If you turn on the optional star breakdown, you can also see which star levels those new ratings went to, so you know whether a jump is good news. It relies on an unofficial App Store API, so it may stop working at any time.
+                    </p>
+                    <blockquote>
+                        Rating history is kept on your Mac and starts with your first check, so changes appear after about a day.
+                    </blockquote>
+                    <figure>
+                        <img src="../../appshipper/screenshots/web/reviews.jpg" alt="AppShipper reviews list next to Ratings by Country, with daily changes and a 30-day chart for the United Kingdom" loading="lazy" width="2000" height="1193" style="display: block; width: 100%; height: auto; border-radius: 12px" />
+                    </figure>
+
+                    <h2>Try it on your own app</h2>
+                    <p>
+                        AppShipper is free for one app, with every feature included, and you can explore it with sample data before connecting anything. Your App Store Connect API key stays in your Mac’s Keychain, and there are no AppShipper servers in between.
+                    </p>
+                    <p>
+                        See the <a href="../../appshipper/index.html">AppShipper page</a> or <a href="https://apps.apple.com/us/app/appshipper/id6818973355">download it from the Mac App Store</a>. If something is missing, write to <a href="mailto:support@antcraft.dev">support@antcraft.dev</a>. I read every message.
+                    </p>
+                </div>
+
+                <div class="post-footer">
+                    <span>Written by <strong>Pavlo Antoniuk</strong></span>
+                    <a href="../index.html" class="link-arrow">← Back to all posts</a>
+                </div>
+            </article>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container footer-content">
+                <div>
+                    © <span id="year"></span> <strong>antcraft.dev</strong>. All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <!-- External JavaScript -->
+        <script src="../../js/main.js?v=9a2e1a627b"></script>
+    </body>
+</html>
