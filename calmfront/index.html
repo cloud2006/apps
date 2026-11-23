@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <title>Calmfront — Feel the weather turn before it does</title>
+        <meta
+            name="description"
+            content="Calmfront is a barometer for iPhone for people whose migraines, headaches or joint pain react to the weather. It forecasts sharp pressure drops and gently warns you ahead. Coming soon to the App Store."
+        />
+        <meta property="og:title" content="Calmfront — Feel the weather turn before it does" />
+        <meta property="og:description" content="A gentle barometer that forecasts sharp pressure drops — a possible trigger for migraines and aching joints. Coming soon for iPhone." />
+        <meta property="og:image" content="icon/icon-512.jpg" />
+        <meta name="theme-color" content="#fbf7ee" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#1f2546" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" href="icon/icon-512.jpg" />
+        <link rel="apple-touch-icon" href="icon/icon-512.jpg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Nunito:wght@400;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/app-page.css?v=f8c9334227" />
+        <link rel="stylesheet" href="style.css?v=046e61f56a" />
+    </head>
+    <body>
+        <div class="sky" aria-hidden="true"></div>
+
+        <header class="topbar">
+            <div class="wrap topbar-inner">
+                <a class="brand" href="index.html" aria-label="Calmfront home">
+                    <img src="icon/icon-512.jpg" alt="" width="32" height="32" />
+                    <span>Calmfront</span>
+                </a>
+                <a class="pill-link" href="../index.html">All apps</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="wrap hero-grid">
+                    <div class="hero-copy">
+                        <img class="hero-icon" src="icon/icon-512.jpg" alt="" width="104" height="104" />
+                        <p class="soon-badge"><span class="pulse" aria-hidden="true"></span>Coming soon to the App Store</p>
+                        <h1>Feel the weather turn <em>before it does.</em></h1>
+                        <p class="lead">
+                            Calmfront watches the air pressure where you are and gently warns you about sharp drops — a possible trigger for migraines, headaches and aching joints.
+                        </p>
+                        <p class="chips">
+                            <span class="chip">iPhone</span>
+                            <span class="chip">Widgets</span>
+                            <span class="chip">English · Deutsch</span>
+                        </p>
+                    </div>
+
+                    <div class="hero-device">
+                        <span class="device">
+                            <span class="device-screen">
+                                <picture>
+                                    <source srcset="screenshots/now-dark.jpg" media="(prefers-color-scheme: dark)" />
+                                    <img src="screenshots/now-light.jpg" alt="Calmfront Now screen: current pressure 1,012.6 hPa, a sharp drop forecast for Thursday and a three-day pressure chart" width="659" height="1434" />
+                                </picture>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="wrap feature-grid">
+                    <article class="feature">
+                        <span class="feature-icon feature-icon-drop" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 7l11 11M17 9v9H8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                        </span>
+                        <h2>Sharp drops, ahead of time</h2>
+                        <p>See when pressure will fall fast in the coming days, and get a quiet heads-up 12 hours before.</p>
+                    </article>
+                    <article class="feature">
+                        <span class="feature-icon feature-icon-diary" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3l1.8 7.2L21 12l-7.2 1.8L12 21l-1.8-7.2L3 12l7.2-1.8z" fill="currentColor" /></svg>
+                        </span>
+                        <h2>A diary that remembers the sky</h2>
+                        <p>Log a migraine or aching joints in a tap. Calmfront saves the pressure with it, so patterns are easier to spot.</p>
+                    </article>
+                    <article class="feature">
+                        <span class="feature-icon feature-icon-private" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22"><rect x="5" y="10.5" width="14" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="2.2" /><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>
+                        </span>
+                        <h2>Private and calm</h2>
+                        <p>No account, no ads, no tracking. Your diary stays on your iPhone, and alerts respect your quiet hours.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="wrap footer-inner">
+                <span>© 2026 Calmfront by <a href="../index.html">antcraft.dev</a></span>
+                <nav class="footer-links" aria-label="Footer">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                    <a href="mailto:support@antcraft.dev">Support</a>
+                    <a href="../index.html">All apps</a>
+                </nav>
+                <p class="footer-note">Calmfront is not a medical device and does not predict migraines. Weather data by Apple Weather. App Store is a trademark of Apple Inc.</p>
+            </div>
+        </footer>
+    </body>
+</html>
