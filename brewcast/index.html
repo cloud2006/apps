@@ -3,18 +3,22 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <title>Brewcast — Drink coffee. Sleep well.</title>
+        <title>Brewcast — Caffeine Tracker & Sleep Cutoff</title>
         <meta
             name="description"
-            content="Brewcast is a caffeine tracker for iPhone and iPad. It shows how much more caffeine fits today and when your last cup stops affecting sleep. Coming soon to the App Store."
+            content="Brewcast is a caffeine tracker for iPhone and iPad. See how much more caffeine fits today, when your last cup stops affecting sleep, and what one more espresso would do. Free on the App Store."
         />
         <meta property="og:title" content="Brewcast — Drink coffee. Sleep well." />
-        <meta property="og:description" content="See how much more caffeine fits today, and when your sleep is clear. Coming soon for iPhone and iPad." />
-        <meta property="og:image" content="icon/icon-512.jpg" />
+        <meta property="og:description" content="See how much more caffeine fits today, and when your sleep is clear. Free for iPhone and iPad." />
+        <meta property="og:image" content="screenshots/web/01-today.jpg" />
+        <meta name="apple-itunes-app" content="app-id=6828841021" />
         <meta name="theme-color" content="#eef0ea" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0e1222" media="(prefers-color-scheme: dark)" />
         <link rel="icon" href="icon/icon-512.jpg" />
         <link rel="apple-touch-icon" href="icon/icon-512.jpg" />
+        <script>
+            document.documentElement.classList.add("js");
+        </script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -22,9 +26,17 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="../css/app-page.css?v=f8c9334227" />
-        <link rel="stylesheet" href="style.css?v=7c52f0bca1" />
+        <link rel="stylesheet" href="style.css?v=fcdcebab50" />
     </head>
     <body>
+        <!-- Icon sprite -->
+        <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+            <symbol id="i-apple" viewBox="0 0 170 170"><path fill="currentColor" d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-5.78-8.8-10.3-18.7-13.56-29.7-3.26-11-4.89-21.6-4.89-31.8 0-15.01 3.86-27.46 11.59-37.34 7.73-9.88 17.33-14.93 28.81-15.15 4.8 0 10.12 1.25 15.96 3.75 5.84 2.5 9.87 3.81 12.1 3.93 1.85-.22 5.94-1.57 12.27-4.05 6.33-2.48 11.54-3.63 15.63-3.45 13.59.87 24.3 5.84 32.13 14.9-11.85 7.18-17.67 17.07-17.47 29.68.2 9.79 3.96 17.84 11.28 24.16 7.32 6.31 16.09 9.88 26.31 10.7-2.17 6.74-4.67 13.3-7.5 19.67zM119.22 31.84c0-7.39 2.66-14.36 7.99-20.91 5.33-6.55 11.86-10.42 19.6-11.61.22 1.3.33 2.5.33 3.6 0 7.39-2.77 14.49-8.31 21.3-5.54 6.81-12.1 10.74-19.68 11.78-.11-1.39-.17-2.77-.17-4.16z" /></symbol>
+            <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+            <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+            <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" /></symbol>
+        </svg>
+
         <header class="topbar">
             <div class="wrap topbar-inner">
                 <a class="brand" href="index.html" aria-label="Brewcast home">
@@ -40,23 +52,32 @@
                 <div class="wrap hero-grid">
                     <div class="hero-copy">
                         <img class="hero-icon" src="icon/icon-512.jpg" alt="" width="104" height="104" />
-                        <p class="soon-badge"><span class="pulse" aria-hidden="true"></span>Coming soon to the App Store</p>
+                        <p class="eyebrow">Caffeine tracker &amp; sleep cutoff</p>
                         <h1>Drink coffee. <em>Sleep well.</em></h1>
                         <p class="lead">
-                            Brewcast tracks the caffeine in your body from the drinks you log. It shows how much more fits today, and when your last cup stops affecting sleep.
+                            Caffeine has a half-life of about five hours, so the afternoon latte is still with you at bedtime. Brewcast tracks the caffeine in your body from the drinks you log. It shows how much more fits today, and when your last cup stops affecting sleep.
                         </p>
-                        <p class="chips">
-                            <span class="chip">iPhone</span>
-                            <span class="chip">iPad</span>
-                        </p>
+                        <div class="hero-cta">
+                            <a class="btn-store" href="https://apps.apple.com/us/app/brewcast-caffeine-tracker/id6828841021" target="_blank" rel="noopener">
+                                <svg aria-hidden="true"><use href="#i-apple" /></svg>
+                                <span><small>Download on the</small>App Store</span>
+                            </a>
+                            <a class="btn-soft" href="#screens">See the app</a>
+                        </div>
+                        <ul class="hero-meta">
+                            <li>Free · Pro optional</li>
+                            <li>iPhone &amp; iPad</li>
+                            <li>9 languages</li>
+                            <li>No data collected</li>
+                        </ul>
                     </div>
 
                     <div class="hero-device">
                         <span class="device">
                             <span class="device-screen">
                                 <picture>
-                                    <source srcset="screenshots/03-night.jpg" media="(prefers-color-scheme: dark)" />
-                                    <img src="screenshots/01-today.jpg" alt="Brewcast Today screen: caffeine left for today, cutoff times for usual drinks and when sleep is clear" width="660" height="1434" />
+                                    <source srcset="screenshots/web/03-night.jpg" media="(prefers-color-scheme: dark)" />
+                                    <img src="screenshots/web/01-today.jpg" alt="Brewcast Today screen: caffeine left for today, cutoff times for usual drinks and when sleep is clear" width="660" height="1434" />
                                 </picture>
                             </span>
                         </span>
@@ -64,23 +85,122 @@
                 </div>
             </section>
 
-            <section class="features">
-                <div class="wrap feature-grid">
-                    <article class="feature">
-                        <span class="feature-icon" aria-hidden="true">☕</span>
-                        <h2>How much more today</h2>
-                        <p>Your remaining caffeine for the day, and the latest time each of your usual drinks still fits before bed.</p>
-                    </article>
-                    <article class="feature">
-                        <span class="feature-icon" aria-hidden="true">🌙</span>
-                        <h2>What if?</h2>
-                        <p>Preview how one more espresso would move tonight's sleep, before you drink it.</p>
-                    </article>
-                    <article class="feature">
-                        <span class="feature-icon" aria-hidden="true">🔒</span>
-                        <h2>Private by design</h2>
-                        <p>No account, no server, no tracking. Your log stays on your device.</p>
-                    </article>
+            <section class="section" id="features">
+                <div class="wrap">
+                    <header class="section-head" data-reveal>
+                        <p class="eyebrow">What you get</p>
+                        <h2>Every cup, counted.<br />Every night, clear.</h2>
+                    </header>
+                    <div class="feature-grid">
+                        <article class="feature" data-reveal>
+                            <span class="feature-icon" aria-hidden="true">☕</span>
+                            <h3>How much more today</h3>
+                            <p>“Can still have” shows your remaining caffeine for the day, and the latest time each of your usual drinks still fits before bed.</p>
+                        </article>
+                        <article class="feature" data-reveal style="--reveal-delay: 0.06s">
+                            <span class="feature-icon" aria-hidden="true">📈</span>
+                            <h3>Caffeine in your body</h3>
+                            <p>A live curve of today with your sleep threshold and bedtime window. See exactly when sleep is clear.</p>
+                        </article>
+                        <article class="feature" data-reveal style="--reveal-delay: 0.12s">
+                            <span class="feature-icon" aria-hidden="true">🌙</span>
+                            <h3>What if?</h3>
+                            <p>Preview how one more espresso would move tonight's sleep, before you drink it. Nothing is saved until you log it.</p>
+                        </article>
+                        <article class="feature" data-reveal>
+                            <span class="feature-icon" aria-hidden="true">🧋</span>
+                            <h3>Made for real drinks</h3>
+                            <p>Over 130 drinks: coffee, café classics, teas and matcha, energy drinks and sodas. Adjust size, shots, time and how fast you drank it.</p>
+                        </article>
+                        <article class="feature" data-reveal style="--reveal-delay: 0.06s">
+                            <span class="feature-icon" aria-hidden="true">⏱️</span>
+                            <h3>Brew timers</h3>
+                            <p>Timers for AeroPress, V60 and matcha. The drink is logged automatically when the timer ends.</p>
+                        </article>
+                        <article class="feature" data-reveal style="--reveal-delay: 0.12s">
+                            <span class="feature-icon" aria-hidden="true">🔒</span>
+                            <h3>Private by design</h3>
+                            <p>No account, no ads, no tracking. Your log stays on your device, and you can write caffeine to Apple Health.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-screens" id="screens">
+                <div class="wrap section-head-row" data-reveal>
+                    <header class="section-head">
+                        <p class="eyebrow">Screens</p>
+                        <h2>Day palette by day.<br />Night palette by night.</h2>
+                    </header>
+                    <div class="shots-nav">
+                        <button type="button" data-scroll-target="bcShots" data-dir="-1" aria-label="Previous screenshots"><svg><use href="#i-chev-l" /></svg></button>
+                        <button type="button" data-scroll-target="bcShots" data-dir="1" aria-label="Next screenshots"><svg><use href="#i-chev-r" /></svg></button>
+                    </div>
+                </div>
+
+                <div class="shots" id="bcShots" data-reveal>
+                    <figure class="shot">
+                        <button class="shot-btn" type="button" data-lightbox="iphone" data-caption="Today — how much more fits">
+                            <span class="device"><span class="device-screen"><img src="screenshots/web/01-today.jpg" alt="Brewcast Today screen with 82 mg left for today, cutoff times for espresso, matcha and Red Bull, and the caffeine curve" loading="lazy" width="660" height="1434" /></span></span>
+                        </button>
+                        <figcaption><b>Today</b> What still fits, and until when</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <button class="shot-btn" type="button" data-lightbox="iphone" data-caption="What if? — preview one more drink">
+                            <span class="device"><span class="device-screen"><img src="screenshots/web/02-what-if.jpg" alt="Brewcast What if preview: one more espresso would push sleep to 4:20 AM" loading="lazy" width="660" height="1434" /></span></span>
+                        </button>
+                        <figcaption><b>What if?</b> See the effect before you drink it</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <button class="shot-btn" type="button" data-lightbox="iphone" data-caption="Night — ready for sleep">
+                            <span class="device"><span class="device-screen"><img src="screenshots/web/03-night.jpg" alt="Brewcast in the night palette: 37 mg in body, below the sleep threshold, sleep clear now" loading="lazy" width="660" height="1434" /></span></span>
+                        </button>
+                        <figcaption><b>Night</b> Ready for sleep, below the threshold</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <button class="shot-btn" type="button" data-lightbox="iphone" data-caption="Brew — recipes with timers">
+                            <span class="device"><span class="device-screen"><img src="screenshots/web/04-brew.jpg" alt="Brewcast Brew tab with AeroPress, V60 and matcha recipes and their caffeine" loading="lazy" width="660" height="1434" /></span></span>
+                        </button>
+                        <figcaption><b>Brew</b> Timers that log the drink for you</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <button class="shot-btn" type="button" data-lightbox="iphone" data-caption="Insights — your week">
+                            <span class="device"><span class="device-screen"><img src="screenshots/web/05-insights.jpg" alt="Brewcast Insights: caffeine per day, caffeine left at bedtime and weekly averages" loading="lazy" width="660" height="1434" /></span></span>
+                        </button>
+                        <figcaption><b>Insights</b> Caffeine per day and left at bedtime</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="section" id="pro">
+                <div class="wrap">
+                    <div class="pro-card" data-reveal>
+                        <div class="pro-copy">
+                            <p class="eyebrow">Brewcast Pro</p>
+                            <h2>Free to track.<br />Pro when you want more.</h2>
+                            <p>The essentials are free. Pro adds the extras, as a monthly or yearly subscription or a one-time lifetime purchase.</p>
+                        </div>
+                        <ul class="pro-list">
+                            <li>What-if preview</li>
+                            <li>Home and Lock Screen widgets</li>
+                            <li>Live Activity</li>
+                            <li>Custom drinks</li>
+                            <li>Full history</li>
+                            <li>Last-cup reminder</li>
+                        </ul>
+                    </div>
+
+                    <div class="cta-band" data-reveal>
+                        <img src="icon/icon-512.jpg" alt="" width="72" height="72" />
+                        <div>
+                            <h2>Your next cup, timed right.</h2>
+                            <p>Brewcast for iPhone and iPad. English, French, German, Japanese, Korean, Russian, Simplified Chinese, Spanish and Ukrainian.</p>
+                        </div>
+                        <a class="btn-store" href="https://apps.apple.com/us/app/brewcast-caffeine-tracker/id6828841021" target="_blank" rel="noopener">
+                            <svg aria-hidden="true"><use href="#i-apple" /></svg>
+                            <span><small>Download on the</small>App Store</span>
+                        </a>
+                    </div>
                 </div>
             </section>
         </main>
@@ -89,13 +209,26 @@
             <div class="wrap footer-inner">
                 <span>© 2026 Brewcast by <a href="../index.html">antcraft.dev</a></span>
                 <nav class="footer-links" aria-label="Footer">
+                    <a href="https://apps.apple.com/us/app/brewcast-caffeine-tracker/id6828841021" target="_blank" rel="noopener">App Store</a>
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Use</a>
                     <a href="mailto:support@antcraft.dev">Support</a>
                     <a href="../index.html">All apps</a>
                 </nav>
-                <p class="footer-note">Brewcast shows estimates, not medical advice. App Store is a trademark of Apple Inc.</p>
+                <p class="footer-note">Brewcast shows estimates, not medical advice. If you are pregnant or have a heart condition, agree on your caffeine limit with a doctor. App Store is a trademark of Apple Inc.</p>
             </div>
         </footer>
+
+        <dialog class="lightbox" aria-label="Screenshot preview">
+            <button class="lightbox-btn lightbox-close" type="button" data-lightbox-close aria-label="Close"><svg><use href="#i-close" /></svg></button>
+            <button class="lightbox-btn lightbox-prev" type="button" data-lightbox-prev aria-label="Previous screenshot"><svg><use href="#i-chev-l" /></svg></button>
+            <button class="lightbox-btn lightbox-next" type="button" data-lightbox-next aria-label="Next screenshot"><svg><use href="#i-chev-r" /></svg></button>
+            <figure>
+                <img alt="" />
+                <figcaption></figcaption>
+            </figure>
+        </dialog>
+
+        <script src="../js/app-page.js?v=a7c764f67f" defer></script>
     </body>
 </html>

@@ -7,3 +7,6 @@
 
 # Local tooling
 .claude/
+
+# Brewcast raw screenshots — the page uses brewcast/screenshots/web/
+brewcast/screenshots/*.png
