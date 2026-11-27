@@ -323,6 +323,11 @@ header {
     --tile-glow: rgba(61, 140, 255, 0.24);
 }
 
+.tile-brew {
+    --tile-accent: #e3a56c;
+    --tile-glow: rgba(217, 155, 92, 0.2);
+}
+
 .tile-anime {
     --tile-accent: #e0b866;
     --tile-glow: rgba(107, 53, 184, 0.24);
@@ -581,6 +586,21 @@ header {
     to {
         transform: translateX(-50%);
     }
+}
+
+.tile-deco-brew {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 52px;
+    fill: rgba(217, 155, 92, 0.14);
+    transform-origin: bottom;
+    transition: transform 0.5s ease;
+}
+
+.tile-brew.is-link:hover .tile-deco-brew {
+    transform: scaleY(1.15);
 }
 
 .tile-deco-anime {
